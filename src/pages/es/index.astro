@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Experience from '../../components/sections/Experience.astro';
+import Skills from '../../components/sections/Skills.astro';
+import Projects from '../../components/sections/Projects.astro';
+import Education from '../../components/sections/Education.astro';
+import Contact from '../../components/sections/Contact.astro';
+
+// Load CV data
+import yaml from 'js-yaml';
+import fs from 'node:fs';
+
+const cvData = yaml.load(fs.readFileSync('src/data/es/cv.yaml', 'utf-8')) as {
+  name: string;
+  headline: string;
+  about: string;
+  location: string;
+  email: string;
+  cv_pdf: string;
+  social: {
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+    website?: string;
+  };
+  experience: Array<{
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+    highlights: string[];
+  }>;
+  skills: Array<{
+    category: string;
+    items: Array<{ name: string; level: number }>;
+  }>;
+  projects: Array<{
+    name: string;
+    description: string;
+    tech: string[];
+    url?: string;
+    github?: string;
+  }>;
+  education: Array<{
+    degree: string;
+    institution: string;
+    period: string;
+    details?: string;
+  }>;
+};
+
+const locale = 'es';
+---
+
+<BaseLayout locale={locale} title={cvData.name}>
+  <Hero
+    locale={locale}
+    name={cvData.name}
+    headline={cvData.headline}
+    about={cvData.about}
+    location={cvData.location}
+    social={cvData.social}
+  />
+
+  <Experience locale={locale} items={cvData.experience} />
+
+  <Skills locale={locale} categories={cvData.skills} />
+
+  <Projects locale={locale} items={cvData.projects} />
+
+  <Education locale={locale} items={cvData.education} />
+
+  <Contact
+    locale={locale}
+    email={cvData.email}
+    cvPdf={cvData.cv_pdf}
+    social={cvData.social}
+  />
+</BaseLayout>

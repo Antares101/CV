@@ -1,0 +1,101 @@
+# ============================================
+# CV Data — Español
+# Completá con tu información real
+# ============================================
+
+name: "Tu Nombre"
+headline: "Full-Stack Developer & Arquitecto de Software"
+about: >
+  Apasionado por construir aplicaciones web elegantes y performantes
+  con arquitectura limpia y una gran experiencia de desarrollo.
+  Especializado en ecosistemas modernos de JavaScript/TypeScript,
+  arquitecturas cloud-native y herramientas para desarrolladores.
+location: "Ciudad, País"
+email: "tu@email.com"
+cv_pdf: "/cv.pdf"
+
+social:
+  github: "https://github.com/tuusuario"
+  linkedin: "https://linkedin.com/in/tuusuario"
+  twitter: "https://twitter.com/tuusuario"    # opcional
+  website: "https://tuweb.com"                # opcional
+
+experience:
+  - role: "Senior Software Engineer"
+    company: "Nombre de Empresa"
+    period: "Ene 2022 - Actualidad"
+    description: >
+      Liderando la arquitectura frontend y mentorando desarrolladores junior.
+      Impulsando la migración a micro-frontends y mejorando pipelines CI/CD.
+    highlights:
+      - "Reduje el bundle size un 40% mediante code splitting y tree shaking"
+      - "Lideré la migración de frontend monolítico a micro-frontends"
+      - "Establecí un design system usado por 3 equipos de producto"
+
+  - role: "Software Developer"
+    company: "Empresa Anterior"
+    period: "Jun 2019 - Dic 2021"
+    description: >
+      Desarrollo full-stack con React y Node.js.
+      Construcción y mantenimiento de APIs REST y servicios en tiempo real.
+    highlights:
+      - "Desarrollé dashboard de analítica en tiempo real para 10k+ usuarios diarios"
+      - "Implementé pipeline CI/CD reduciendo el tiempo de deploy un 60%"
+      - "Escribí suite de tests completa alcanzando 90% de cobertura"
+
+skills:
+  - category: "Frontend"
+    items:
+      - name: "React / Next.js"
+        level: 95
+      - name: "TypeScript"
+        level: 92
+      - name: "Astro"
+        level: 85
+      - name: "Tailwind CSS"
+        level: 90
+      - name: "SolidJS"
+        level: 75
+  - category: "Backend"
+    items:
+      - name: "Node.js"
+        level: 90
+      - name: "Go"
+        level: 75
+      - name: "PostgreSQL"
+        level: 80
+      - name: "GraphQL"
+        level: 78
+  - category: "Herramientas & DevOps"
+    items:
+      - name: "Git"
+        level: 90
+      - name: "Docker"
+        level: 85
+      - name: "CI/CD"
+        level: 88
+      - name: "AWS"
+        level: 75
+
+projects:
+  - name: "Proyecto Open Source"
+    description: "Herramienta para desarrolladores que simplifica el mockeo de APIs"
+    tech: ["TypeScript", "Node.js", "Vitest"]
+    url: "https://ejemplo.com"
+    github: "https://github.com/tuusuario/proyecto"
+
+  - name: "Plataforma E-commerce"
+    description: "Tienda online completa con gestión de inventario en tiempo real"
+    tech: ["Next.js", "Stripe", "PostgreSQL", "Docker"]
+    url: "https://ejemplo.com"
+
+  - name: "CLI Tool"
+    description: "Herramienta de línea de comandos para scaffolding de microservicios"
+    tech: ["Go", "Cobra", "Docker"]
+    github: "https://github.com/tuusuario/cli-tool"
+
+education:
+  - degree: "Lic. en Ciencias de la Computación"
+    institution: "Nombre de la Universidad"
+    period: "2015 - 2019"
+    details: "Graduado con honores. Enfoque en sistemas distribuidos e IA."

@@ -1,0 +1,85 @@
+/* =============================================================================
+   Print Stylesheet — Optimized for PDF/print output
+   ============================================================================= */
+
+@media print {
+  /* Hide non-essential elements */
+  nav,
+  .theme-toggle,
+  .scroll-indicator,
+  footer,
+  #contact .flex-col a:not([href^="mailto"]) {
+    display: none !important;
+  }
+
+  /* Reset backgrounds and shadows */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure text is readable */
+  body {
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Ensure all sections are visible (no animation hiding) */
+  section {
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-inside: avoid;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Keep links visible */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Section titles */
+  h2 {
+    font-size: 16pt !important;
+    color: #000 !important;
+  }
+
+  /* Cards without borders */
+  .rounded-2xl {
+    border: 1px solid #ccc !important;
+    padding: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Skill bars as solid fills */
+  .h-2 {
+    border: 1px solid #999;
+  }
+
+  .h-2 > div {
+    background: #333 !important;
+  }
+
+  /* Ensure page breaks are clean */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* URL display for important links */
+  .no-print-url::after {
+    content: none !important;
+  }
+}

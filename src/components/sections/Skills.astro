@@ -1,0 +1,52 @@
+---
+import type { Locale } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+import AnimatedSection from '../../islands/AnimatedSection';
+import SkillBars from '../../islands/SkillBars';
+
+interface SkillItem {
+  name: string;
+  level: number;
+}
+
+interface SkillCategory {
+  category: string;
+  items: SkillItem[];
+}
+
+export interface Props {
+  locale: Locale;
+  categories: SkillCategory[];
+}
+
+const { locale, categories } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="skills" class="py-24 sm:py-32 bg-gray-50/50 dark:bg-gray-900/30">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection client:visible>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-accent-400 to-blue-500 bg-clip-text text-transparent">
+          {t('section.skills')}
+        </span>
+      </h2>
+      <div class="w-20 h-1 bg-accent-400 rounded-full mb-12"></div>
+    </AnimatedSection>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {categories.map((category) => (
+        <AnimatedSection client:visible>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-accent-400"></span>
+              {category.category}
+            </h3>
+
+            <SkillBars skills={category.items} />
+          </div>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>

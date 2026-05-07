@@ -1,0 +1,61 @@
+// =============================================================================
+// UI Translation keys — for interface text (nav, buttons, labels, etc.)
+// Content text (experience, skills, etc.) lives in src/data/{locale}/cv.yaml
+// =============================================================================
+
+export const ui = {
+  en: {
+    'nav.experience': 'Experience',
+    'nav.skills': 'Skills',
+    'nav.projects': 'Projects',
+    'nav.education': 'Education',
+    'nav.contact': 'Contact',
+    'hero.scroll': 'Scroll to explore',
+    'section.experience': 'Experience',
+    'section.skills': 'Skills & Technologies',
+    'section.projects': 'Featured Projects',
+    'section.education': 'Education',
+    'section.contact': "Let's Connect",
+    'contact.download': 'Download CV',
+    'contact.email': 'Send Email',
+    'theme.light': 'Light mode',
+    'theme.dark': 'Dark mode',
+    'lang.switch': 'Español',
+    'lang.label': 'Language',
+    'project.live': 'Live Demo',
+    'project.source': 'Source Code',
+    'footer.made': 'Built with Astro & SolidJS',
+  },
+  es: {
+    'nav.experience': 'Experiencia',
+    'nav.skills': 'Habilidades',
+    'nav.projects': 'Proyectos',
+    'nav.education': 'Educación',
+    'nav.contact': 'Contacto',
+    'hero.scroll': 'Desplazate para explorar',
+    'section.experience': 'Experiencia',
+    'section.skills': 'Habilidades y Tecnologías',
+    'section.projects': 'Proyectos Destacados',
+    'section.education': 'Educación',
+    'section.contact': 'Conectemos',
+    'contact.download': 'Descargar CV',
+    'contact.email': 'Enviar Email',
+    'theme.light': 'Modo claro',
+    'theme.dark': 'Modo oscuro',
+    'lang.switch': 'English',
+    'lang.label': 'Idioma',
+    'project.live': 'Demo en vivo',
+    'project.source': 'Código Fuente',
+    'footer.made': 'Hecho con Astro & SolidJS',
+  },
+} as const;
+
+export type Locale = keyof typeof ui;
+export type TranslationKey = keyof (typeof ui)['en'];
+
+export function useTranslations(locale: string) {
+  return (key: TranslationKey): string => {
+    const dict = ui[locale as Locale] ?? ui.en;
+    return dict[key] ?? key;
+  };
+}
