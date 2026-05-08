@@ -3,22 +3,20 @@
 # Fill this with your real information
 # ============================================
 
-name: "Your Name"
+name: "Alejandro Mancebo"
 headline: "Full-Stack Developer & Software Architect"
 about: >
   Passionate about building elegant, performant web applications
   with clean architecture and great developer experience.
   I specialize in modern JavaScript/TypeScript ecosystems,
   cloud-native architectures, and developer tooling.
-location: "City, Country"
-email: "your@email.com"
+location: "Montevideo, Uruguay"
+email: "antarebo@gmail.com"
 cv_pdf: "/cv.pdf"
 
 social:
   github: "https://github.com/yourusername"
   linkedin: "https://linkedin.com/in/yourusername"
-  twitter: "https://twitter.com/yourusername"    # optional — remove if not needed
-  website: "https://yourwebsite.com"               # optional
 
 experience:
   - role: "Senior Software Engineer"

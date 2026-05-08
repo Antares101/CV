@@ -3,22 +3,19 @@
 # Completá con tu información real
 # ============================================
 
-name: "Tu Nombre"
+name: "Alejandro Mancebo"
 headline: "Full-Stack Developer & Arquitecto de Software"
 about: >
   Apasionado por construir aplicaciones web elegantes y performantes
   con arquitectura limpia y una gran experiencia de desarrollo.
   Especializado en ecosistemas modernos de JavaScript/TypeScript,
   arquitecturas cloud-native y herramientas para desarrolladores.
-location: "Ciudad, País"
-email: "tu@email.com"
+location: "Montevideo, Uruguay"
+email: "antarebo@gmail.com"
 cv_pdf: "/cv.pdf"
-
 social:
   github: "https://github.com/tuusuario"
   linkedin: "https://linkedin.com/in/tuusuario"
-  twitter: "https://twitter.com/tuusuario"    # opcional
-  website: "https://tuweb.com"                # opcional
 
 experience:
   - role: "Senior Software Engineer"
