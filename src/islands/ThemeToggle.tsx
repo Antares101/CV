@@ -1,12 +1,11 @@
 import { createSignal, onMount } from 'solid-js';
 
 export default function ThemeToggle() {
-  const [dark, setDark] = createSignal(false);
+  const [dark, setDark] = createSignal(true);
 
   onMount(() => {
     const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = stored ? stored === 'dark' : prefersDark;
+    const isDark = stored !== 'light';
     setDark(isDark);
   });
 
@@ -14,19 +13,20 @@ export default function ThemeToggle() {
     const newDark = !dark();
     setDark(newDark);
     document.documentElement.classList.toggle('dark', newDark);
+    document.documentElement.classList.toggle('light', !newDark);
     localStorage.setItem('theme', newDark ? 'dark' : 'light');
   };
 
   return (
     <button
       onClick={toggle}
-      class="p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-400"
+      class="flex items-center justify-center w-9 h-9 border-2 border-p5-gray text-p5-muted hover:border-p5-red hover:text-p5-red hover:shadow-[0_0_10px_rgba(229,57,53,0.3)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-p5-red p5-hover-skew"
       aria-label={dark() ? 'Switch to light mode' : 'Switch to dark mode'}
       title={dark() ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       {/* Sun icon (shown in dark mode, hidden in light mode) */}
       <svg
-        class={`w-5 h-5 transition-all duration-300 ${
+        class={`w-4 h-4 transition-all duration-300 ${
           dark() ? 'opacity-100 scale-100' : 'opacity-0 scale-75 absolute'
         }`}
         fill="none"
@@ -42,7 +42,7 @@ export default function ThemeToggle() {
       </svg>
       {/* Moon icon (shown in light mode, hidden in dark mode) */}
       <svg
-        class={`w-5 h-5 transition-all duration-300 ${
+        class={`w-4 h-4 transition-all duration-300 ${
           !dark() ? 'opacity-100 scale-100' : 'opacity-0 scale-75 absolute'
         }`}
         fill="none"

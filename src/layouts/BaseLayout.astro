@@ -16,7 +16,7 @@ const canonicalURL = locale === 'en' ? '/' : `/${locale}/`;
 ---
 
 <!DOCTYPE html>
-<html lang={locale} class="scroll-smooth">
+<html lang={locale} class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,46 +24,49 @@ const canonicalURL = locale === 'en' ? '/' : `/${locale}/`;
     <link rel="canonical" href={`https://antares101.github.io/CV${canonicalURL}`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts: Inter + JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-    <!-- Prevent theme flash on load -->
+    <!-- Prevent theme flash — P5 defaults to DARK always, only respects explicit user toggle -->
     <script is:inline>
       (function() {
         const theme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (theme === 'dark' || (!theme && prefersDark)) {
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
           document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
         }
       })();
     </script>
 
+    <!-- Google Fonts: Anton + Inter + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
     <title>{title} | Antares101</title>
   </head>
-  <body class="bg-white text-gray-900 dark:bg-slate-950 dark:text-gray-100 transition-colors duration-300 antialiased">
+  <body class="bg-p5-black text-p5-white antialiased">
     <!-- Skip link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-500 focus:text-white focus:rounded-lg">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-p5-red focus:text-white focus:rounded-none">
       Skip to main content
     </a>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-white/70 dark:bg-slate-950/70 border-b border-gray-200/50 dark:border-gray-800/50">
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-p5-black/90 backdrop-blur-md border-b border-p5-gray/50 p5-nav-stripe">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo / Home -->
-          <a href={canonicalURL} class="font-bold text-lg tracking-tight hover:text-accent-500 transition-colors">
+          <a href={canonicalURL} class="font-display text-xl tracking-wider text-p5-white hover:text-p5-red transition-colors uppercase">
             &lt;Antares101 /&gt;
           </a>
 
           <!-- Desktop Nav -->
-          <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
-            <a href="#experience" class="hover:text-accent-500 dark:hover:text-accent-400 transition-colors">{t('nav.experience')}</a>
-            <a href="#skills" class="hover:text-accent-500 dark:hover:text-accent-400 transition-colors">{t('nav.skills')}</a>
-            <a href="#projects" class="hover:text-accent-500 dark:hover:text-accent-400 transition-colors">{t('nav.projects')}</a>
-            <a href="#education" class="hover:text-accent-500 dark:hover:text-accent-400 transition-colors">{t('nav.education')}</a>
-            <a href="#contact" class="hover:text-accent-500 dark:hover:text-accent-400 transition-colors">{t('nav.contact')}</a>
+          <div class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider text-p5-muted">
+            <a href="#experience" class="p5-hover-skew hover:text-p5-red transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-p5-red after:transition-all hover:after:w-full">{t('nav.experience')}</a>
+            <a href="#skills" class="p5-hover-skew hover:text-p5-red transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-p5-red after:transition-all hover:after:w-full">{t('nav.skills')}</a>
+            <a href="#projects" class="p5-hover-skew hover:text-p5-red transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-p5-red after:transition-all hover:after:w-full">{t('nav.projects')}</a>
+            <a href="#education" class="p5-hover-skew hover:text-p5-red transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-p5-red after:transition-all hover:after:w-full">{t('nav.education')}</a>
+            <a href="#contact" class="p5-hover-skew hover:text-p5-red transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-p5-red after:transition-all hover:after:w-full">{t('nav.contact')}</a>
           </div>
 
           <!-- Right side controls -->
@@ -75,19 +78,49 @@ const canonicalURL = locale === 'en' ? '/' : `/${locale}/`;
       </div>
     </nav>
 
-    <main id="main-content">
-      <slot />
+    <main id="main-content" class="relative">
+      <!-- P5 star field background overlay -->
+      <div class="p5-stars" aria-hidden="true"></div>
+      <div class="p5-stars-png" aria-hidden="true">
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+        <div class="p5-star-icon"></div>
+      </div>
+      <div class="relative z-10">
+        <slot />
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-sm text-gray-500 dark:text-gray-500">
+    <footer class="border-t border-p5-gray py-8 text-center text-sm text-p5-muted">
       <p class="mb-1">{t('footer.made')}</p>
       <p>&copy; {new Date().getFullYear()} Antares101. All rights reserved.</p>
     </footer>
   </body>
 </html>
 
-<!-- Inline global styles for print -->
 <style is:global>
   @import url('../styles/print.css');
+  @import url('../styles/persona5.css');
+
+  html {
+    background-color: #0a0a0a;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  .light body,
+  body.light {
+    background-color: #f5f5f5;
+    color: #0a0a0a;
+  }
 </style>

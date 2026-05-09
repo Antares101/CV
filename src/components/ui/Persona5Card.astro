@@ -1,0 +1,20 @@
+---
+export interface Props {
+  class?: string;
+  hover?: boolean;
+  jagged?: boolean;
+}
+
+const { class: className = '', hover = true, jagged = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    'bg-p5-dark border-2 border-p5-gray',
+    hover && 'transition-all duration-200 hover:border-p5-red hover:shadow-[0_0_15px_rgba(229,57,53,0.3)]',
+    jagged && 'p5-jagged-bottom',
+    className,
+  ]}
+>
+  <slot />
+</div>

@@ -20,35 +20,35 @@ const { locale, items } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="projects" class="py-24 sm:py-32">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="projects" class="relative py-24 sm:py-32 bg-p5-black scroll-mt-16 overflow-hidden">
+  <div class="p5-shard-corner-tl" aria-hidden="true"></div>
+  <div class="p5-shard-corner-br" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <AnimatedSection client:visible>
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-accent-400 to-blue-500 bg-clip-text text-transparent">
-          {t('section.projects')}
-        </span>
+      <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-p5-white mb-2">
+        {t('section.projects')}
       </h2>
-      <div class="w-20 h-1 bg-accent-400 rounded-full mb-12"></div>
+      <div class="p5-section-divider mb-12"></div>
     </AnimatedSection>
 
     <div class="grid md:grid-cols-2 gap-6">
       {items.map((project) => (
         <AnimatedSection client:visible>
-          <div class="group relative p-6 rounded-2xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-accent-300 dark:hover:border-accent-700 hover:shadow-xl transition-all duration-300">
+          <div class="group relative p-6 bg-p5-dark border-2 border-p5-gray hover:border-p5-red hover:shadow-[0_0_15px_rgba(229,57,53,0.3)] transition-all duration-200">
             <!-- Project name -->
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors">
+            <h3 class="text-xl font-bold text-p5-white mb-3 group-hover:text-p5-red transition-colors p5-hover-skew">
               {project.name}
             </h3>
 
             <!-- Description -->
-            <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+            <p class="text-p5-muted mb-4 leading-relaxed">
               {project.description}
             </p>
 
             <!-- Tech tags -->
             <div class="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech) => (
-                <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-full bg-accent-100 dark:bg-accent-950 text-accent-700 dark:text-accent-300 border border-accent-200 dark:border-accent-800">
+                <span class="px-2.5 py-1 font-mono text-xs font-semibold text-p5-white bg-p5-red">
                   {tech}
                 </span>
               ))}
@@ -57,7 +57,7 @@ const t = useTranslations(locale);
             <!-- Links -->
             <div class="flex items-center gap-4">
               {project.url && (
-                <a href={project.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent-500 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
+                <a href={project.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-p5-red hover:text-p5-white transition-colors">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -65,15 +65,15 @@ const t = useTranslations(locale);
                 </a>
               )}
               {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-p5-muted hover:text-p5-white transition-colors">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
                   {t('project.source')}
                 </a>
               )}
             </div>
 
-            <!-- Decorative gradient on hover -->
-            <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-accent-500/5 to-transparent" aria-hidden="true"></div>
+            <!-- Decorative red gradient on hover -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-p5-red/10 to-transparent" aria-hidden="true"></div>
           </div>
         </AnimatedSection>
       ))}

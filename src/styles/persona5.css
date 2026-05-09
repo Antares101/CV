@@ -1,0 +1,642 @@
+:root {
+  --p5-red: #e53935;
+  --p5-red-dark: #c62828;
+  --p5-red-light: #ff5252;
+  --p5-black: #0a0a0a;
+  --p5-dark: #1a1a1a;
+  --p5-gray: #2a2a2a;
+  --p5-light-gray: #e0e0e0;
+  --p5-white: #f5f5f5;
+  --p5-muted: #999999;
+}
+
+::selection {
+  background: var(--p5-red);
+  color: var(--p5-white);
+}
+
+::-moz-selection {
+  background: var(--p5-red);
+  color: var(--p5-white);
+}
+
+.p5-shard-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p5-review-shard {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.p5-review-shard-tl {
+  border-width: 60px 60px 0 0;
+  border-color: var(--p5-red) transparent transparent transparent;
+}
+
+.p5-review-shard-tr {
+  border-width: 0 60px 60px 0;
+  border-color: transparent var(--p5-red) transparent transparent;
+}
+
+.p5-review-shard-bl {
+  border-width: 0 0 60px 60px;
+  border-color: transparent transparent var(--p5-red) transparent;
+}
+
+.p5-review-shard-br {
+  border-width: 60px 0 0 60px;
+  border-color: transparent transparent transparent var(--p5-red);
+}
+
+.p5-section-divider {
+  width: 100%;
+  height: 3px;
+  background: var(--p5-red);
+  position: relative;
+}
+
+.p5-section-divider::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--p5-red) 0px,
+    var(--p5-red) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.p5-red-glow {
+  box-shadow: 0 0 10px rgba(229, 57, 53, 0.3), 0 0 20px rgba(229, 57, 53, 0.1);
+}
+
+.p5-red-glow:hover {
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.5), 0 0 40px rgba(229, 57, 53, 0.2);
+}
+
+.p5-text-skew {
+  transform: skewX(-5deg);
+  display: inline-block;
+}
+
+.p5-boxed-letter {
+  display: inline-block;
+  border: 2px solid currentColor;
+  padding: 0 0.15em;
+  margin: 0 0.05em;
+  line-height: 1;
+}
+
+.p5-boxed-letter-invert {
+  display: inline-block;
+  border: 2px solid currentColor;
+  background: currentColor;
+  color: var(--p5-black);
+  padding: 0 0.15em;
+  margin: 0 0.05em;
+  line-height: 1;
+}
+
+.p5-jagged-bottom {
+  position: relative;
+}
+
+.p5-jagged-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(135deg, var(--p5-dark) 33.33%, transparent 33.33%) 0 0,
+              linear-gradient(225deg, var(--p5-dark) 33.33%, transparent 33.33%) 0 0;
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+}
+
+.p5-split-line {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--p5-red) 20%,
+    var(--p5-red) 80%,
+    transparent 100%
+  );
+}
+
+@keyframes p5FloatShard {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(-10px) rotate(45deg) scale(1);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) rotate(90deg) scale(0.3);
+  }
+}
+
+.p5-float-shard {
+  animation: p5FloatShard 3s ease-in-out infinite;
+}
+
+.p5-float-shard-delayed {
+  animation: p5FloatShard 3s ease-in-out 1.5s infinite;
+}
+
+.p5-timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--p5-red);
+  border: 3px solid var(--p5-black);
+  box-shadow: 0 0 8px rgba(229, 57, 53, 0.5);
+}
+
+.dark .p5-timeline-dot {
+  border-color: var(--p5-black);
+}
+
+.light .p5-timeline-dot {
+  border-color: var(--p5-white);
+}
+
+.p5-timeline-line {
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--p5-red) 0%,
+    var(--p5-red) 100%
+  );
+  opacity: 0.3;
+}
+
+/* ============================================================================
+   STAR FIELD — P5 iconic dotted star background
+   ============================================================================ */
+
+.p5-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* P5 star icon overlay — real PNG star icons scattered */
+.p5-stars-png {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p5-star-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url('/assets/p5/icons/star-white.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.p5-star-icon:nth-child(1) { top: 12%; left: 8%; width: 16px; height: 16px; opacity: 0.2; }
+.p5-star-icon:nth-child(2) { top: 28%; right: 12%; width: 12px; height: 12px; opacity: 0.15; }
+.p5-star-icon:nth-child(3) { top: 55%; left: 5%; width: 18px; height: 18px; opacity: 0.18; }
+.p5-star-icon:nth-child(4) { top: 75%; right: 8%; width: 14px; height: 14px; opacity: 0.22; }
+.p5-star-icon:nth-child(5) { top: 40%; left: 92%; width: 10px; height: 10px; opacity: 0.25; }
+.p5-star-icon:nth-child(6) { top: 88%; left: 50%; width: 12px; height: 12px; opacity: 0.15; }
+.p5-star-icon:nth-child(7) { top: 5%; right: 30%; width: 14px; height: 14px; opacity: 0.12; }
+.p5-star-icon:nth-child(8) { top: 65%; left: 22%; width: 10px; height: 10px; opacity: 0.18; }
+.p5-star-icon:nth-child(9) { top: 18%; left: 40%; width: 8px; height: 8px; opacity: 0.1; }
+.p5-star-icon:nth-child(10) { top: 50%; left: 45%; width: 6px; height: 6px; opacity: 0.08; }
+
+.p5-stars::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    /* Small stars — white, scattered */
+    23vw 8vh 0 0 rgba(245,245,245,0.5),
+    45vw 15vh 0 0 rgba(245,245,245,0.4),
+    67vw 3vh 0 0 rgba(245,245,245,0.3),
+    82vw 22vh 0 0 rgba(245,245,245,0.5),
+    12vw 35vh 0 0 rgba(245,245,245,0.3),
+    55vw 42vh 0 0 rgba(245,245,245,0.4),
+    78vw 55vh 0 0 rgba(245,245,245,0.5),
+    33vw 68vh 0 0 rgba(245,245,245,0.3),
+    90vw 72vh 0 0 rgba(245,245,245,0.4),
+    5vw 85vh 0 0 rgba(245,245,245,0.5),
+    40vw 92vh 0 0 rgba(245,245,245,0.3),
+    70vw 78vh 0 0 rgba(245,245,245,0.4),
+    15vw 50vh 0 0 rgba(245,245,245,0.3),
+    60vw 60vh 0 0 rgba(245,245,245,0.4),
+    85vw 40vh 0 0 rgba(245,245,245,0.5),
+    95vw 10vh 0 0 rgba(245,245,245,0.3),
+    8vw 65vh 0 0 rgba(245,245,245,0.4),
+    50vw 25vh 0 0 rgba(245,245,245,0.3),
+    73vw 90vh 0 0 rgba(245,245,245,0.4),
+    30vw 12vh 0 0 rgba(245,245,245,0.5),
+    /* Medium stars — red, accent */
+    18vw 12vh 0 1px rgba(229,57,53,0.4),
+    52vw 28vh 0 1px rgba(229,57,53,0.3),
+    75vw 48vh 0 1px rgba(229,57,53,0.4),
+    38vw 75vh 0 1px rgba(229,57,53,0.3),
+    88vw 60vh 0 1px rgba(229,57,53,0.4),
+    62vw 5vh 0 1px rgba(229,57,53,0.3),
+    10vw 82vh 0 1px rgba(229,57,53,0.4),
+    42vw 42vh 0 1px rgba(229,57,53,0.3),
+    /* Larger stars — bright white */
+    28vw 25vh 0 2px rgba(245,245,245,0.6),
+    65vw 65vh 0 2px rgba(245,245,245,0.5),
+    48vw 52vh 0 2px rgba(245,245,245,0.6);
+}
+
+.p5-stars::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    35vw 5vh 0 0 rgba(229,57,53,0.2),
+    72vw 18vh 0 0 rgba(229,57,53,0.2),
+    20vw 45vh 0 0 rgba(229,57,53,0.15),
+    58vw 35vh 0 0 rgba(229,57,53,0.2),
+    80vw 80vh 0 0 rgba(229,57,53,0.15),
+    15vw 20vh 0 0 rgba(229,57,53,0.2),
+    92vw 50vh 0 0 rgba(229,57,53,0.15),
+    45vw 70vh 0 0 rgba(229,57,53,0.2),
+    3vw 40vh 0 0 rgba(229,57,53,0.15),
+    68vw 88vh 0 0 rgba(229,57,53,0.2);
+}
+
+/* ============================================================================
+   P5 CALLING CARD — wanted poster aesthetic
+   ============================================================================ */
+
+.p5-calling-card {
+  position: relative;
+  border: 3px solid var(--p5-red);
+  background: var(--p5-black);
+}
+
+.p5-calling-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid var(--p5-white);
+  pointer-events: none;
+}
+
+/* Real calling card background texture */
+.p5-calling-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/p5/calling-card-base.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p5-calling-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.p5-calling-card-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--p5-white);
+  background: var(--p5-red);
+  border: 2px solid var(--p5-white);
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+.p5-calling-card-stamp::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--p5-red);
+}
+
+.p5-wanted-header {
+  font-family: 'Anton', 'Impact', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--p5-red);
+  line-height: 1;
+  text-align: center;
+}
+
+.p5-wanted-divider {
+  width: 80%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--p5-red) 0px,
+    var(--p5-red) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin: 0.75rem auto;
+}
+
+/* ============================================================================
+   P5 CONFIRM BUTTON — stamp/menu button aesthetic
+   ============================================================================ */
+
+.p5-confirm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 2rem;
+  font-family: 'Anton', 'Impact', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p5-white);
+  background: var(--p5-red);
+  border: 2px solid var(--p5-white);
+  position: relative;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.p5-confirm-btn::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+.p5-confirm-btn:hover {
+  background: var(--p5-red-dark);
+  box-shadow: 0 0 25px rgba(229,57,53,0.5), inset 0 0 15px rgba(229,57,53,0.3);
+}
+
+.p5-confirm-btn:hover::before {
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+}
+
+.p5-confirm-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 2rem;
+  font-family: 'Anton', 'Impact', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--p5-white);
+  border: 2px solid var(--p5-white);
+  position: relative;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.p5-confirm-btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+.p5-confirm-btn-outline:hover {
+  background: var(--p5-red);
+  border-color: var(--p5-red);
+  color: var(--p5-white);
+  box-shadow: 0 0 25px rgba(229,57,53,0.5);
+}
+
+.p5-confirm-btn-outline:hover::before {
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* ============================================================================
+   NAV DIAGONAL STRIPES
+   ============================================================================ */
+
+.p5-nav-stripe {
+  position: relative;
+}
+
+.p5-nav-stripe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0px,
+    transparent 12px,
+    rgba(229,57,53,0.04) 12px,
+    rgba(229,57,53,0.04) 14px
+  );
+  pointer-events: none;
+}
+
+/* ============================================================================
+   P5 SHARD POSITION HELPERS
+   ============================================================================ */
+
+.p5-shard-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 0 0;
+  border-color: var(--p5-red) transparent transparent transparent;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p5-shard-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 40px;
+  border-color: transparent transparent var(--p5-red) transparent;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p5-shard-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================================
+   P5 UNDERLINE ANIMATION (for nav links)
+   ============================================================================ */
+
+.p5-nav-underline {
+  position: relative;
+}
+
+.p5-nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--p5-red);
+  transition: width 0.25s ease-out;
+}
+
+.p5-nav-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================================================
+   P5 HOVER ANIMATIONS — inspired by q-mona/p5-ui (MIT License)
+   Skew + mix-blend-mode effect = signature P5 kinetic style
+   ============================================================================ */
+
+@keyframes p5HoverBgBlue {
+  0%   { top: 6%; transform: skew(-30deg, -2deg) scale(0.7); }
+  20%  { top: 3%; transform: skew(45deg, 4deg) scale(0.8); }
+  40%  { top: -2%; transform: skew(-20deg, -2deg) scale(0.9); }
+  60%  { top: -4%; transform: skew(20deg, 2deg) scale(1); }
+  80%  { top: 3%; transform: skew(-45deg, -4deg) scale(0.85); }
+  100% { top: 6%; transform: skew(45deg, 4deg) scale(0.7); }
+}
+
+@keyframes p5HoverBgRed {
+  0%   { top: -4%; transform: skew(45deg, 4deg) scale(1); }
+  20%  { top: -1%; transform: skew(-30deg, -3deg) scale(0.9); }
+  40%  { top: 2%; transform: skew(60deg, 6deg) scale(0.75); }
+  60%  { top: 3%; transform: skew(-20deg, -2deg) scale(0.7); }
+  80%  { top: -2%; transform: skew(30deg, 3deg) scale(0.85); }
+  100% { top: -4%; transform: skew(45deg, 4deg) scale(1); }
+}
+
+.p5-hover-skew {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.p5-hover-skew::before,
+.p5-hover-skew::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.p5-hover-skew::before {
+  background: rgba(28, 254, 255, 0.25); /* P5 cyan */
+}
+
+.p5-hover-skew::after {
+  background: rgba(255, 0, 34, 0.3); /* P5 red */
+  mix-blend-mode: screen;
+}
+
+.p5-hover-skew:hover::before {
+  opacity: 1;
+  animation: p5HoverBgBlue 0.8s ease-in infinite;
+}
+
+.p5-hover-skew:hover::after {
+  opacity: 1;
+  animation: p5HoverBgRed 0.8s ease-out infinite;
+}
+
+/* P5 authentic 4px red divider (from p5-ui) */
+.p5-divider-red {
+  height: 4px;
+  width: 100%;
+  background: var(--p5-red);
+  border-radius: 2px;
+  margin: 1.5rem 0;
+}
+
+/* ============================================================================
+   LIGHT MODE OVERRIDES
+   ============================================================================ */
+
+.light .p5-calling-card {
+  background: var(--p5-white);
+}
+
+.light .p5-calling-card::before {
+  border-color: var(--p5-black);
+}
+
+.light .p5-confirm-btn-outline {
+  color: var(--p5-black);
+  border-color: var(--p5-black);
+}

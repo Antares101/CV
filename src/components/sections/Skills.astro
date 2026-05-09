@@ -3,6 +3,7 @@ import type { Locale } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/ui';
 import AnimatedSection from '../../islands/AnimatedSection';
 import SkillBars from '../../islands/SkillBars';
+import Persona5Card from '../ui/Persona5Card.astro';
 
 interface SkillItem {
   name: string;
@@ -23,28 +24,28 @@ const { locale, categories } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="skills" class="py-24 sm:py-32 bg-gray-50/50 dark:bg-gray-900/30">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="skills" class="relative py-24 sm:py-32 bg-p5-dark scroll-mt-16 overflow-hidden">
+  <div class="p5-shard-corner-tl" aria-hidden="true"></div>
+  <div class="p5-shard-corner-br" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <AnimatedSection client:visible>
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-accent-400 to-blue-500 bg-clip-text text-transparent">
-          {t('section.skills')}
-        </span>
+      <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-p5-white mb-2">
+        {t('section.skills')}
       </h2>
-      <div class="w-20 h-1 bg-accent-400 rounded-full mb-12"></div>
+      <div class="p5-section-divider mb-12"></div>
     </AnimatedSection>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((category) => (
         <AnimatedSection client:visible>
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-accent-400"></span>
+          <Persona5Card>
+            <h3 class="font-bold text-p5-white mb-6 flex items-center gap-2 uppercase text-sm tracking-wider p5-hover-skew">
+              <span class="w-2 h-2 bg-p5-red"></span>
               {category.category}
             </h3>
 
             <SkillBars skills={category.items} />
-          </div>
+          </Persona5Card>
         </AnimatedSection>
       ))}
     </div>
