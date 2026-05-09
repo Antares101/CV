@@ -12,12 +12,12 @@
 
 ::selection {
   background: var(--p5-red);
-  color: var(--p5-white);
+  color: var(--p5-black);
 }
 
 ::-moz-selection {
   background: var(--p5-red);
-  color: var(--p5-white);
+  color: var(--p5-black);
 }
 
 .p5-shard-decoration {
