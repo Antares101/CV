@@ -1,98 +1,133 @@
 # ============================================
 # CV Data — Español
-# Completá con tu información real
 # ============================================
 
 name: "Alejandro Mancebo"
-headline: "Full-Stack Developer & Arquitecto de Software"
+headline: "Arquitecto de Sistemas & Full-Stack Developer"
 about: >
-  Apasionado por construir aplicaciones web elegantes y performantes
-  con arquitectura limpia y una gran experiencia de desarrollo.
-  Especializado en ecosistemas modernos de JavaScript/TypeScript,
-  arquitecturas cloud-native y herramientas para desarrolladores.
+  Ingeniero autodidacta que aprende haciendo. Desde arreglos de CSS hasta
+  Arquitectura Hexagonal en producción — construyo sistemas que escalan.
+  Más de 4 años diseñando y deployando plataformas de datos en tiempo real,
+  pipelines OCR, y herramientas de compliance para clientes enterprise.
+  Apasionado por la arquitectura limpia, la developer experience, y hacer
+  que sistemas complejos se sientan simples.
 location: "Montevideo, Uruguay"
 email: "antarebo@gmail.com"
 cv_pdf: "/cv.pdf"
+
 social:
-  github: "https://github.com/tuusuario"
-  linkedin: "https://linkedin.com/in/tuusuario"
+  github: "https://github.com/Antares101"
+  linkedin: "https://www.linkedin.com/in/amancebo/"
 
 experience:
-  - role: "Senior Software Engineer"
-    company: "Nombre de Empresa"
-    period: "Ene 2022 - Actualidad"
+  - role: "System Architect & DX Lead"
+    company: "Antares Solutions"
+    period: "Sep 2022 – Actualidad"
     description: >
-      Liderando la arquitectura frontend y mentorando desarrolladores junior.
-      Impulsando la migración a micro-frontends y mejorando pipelines CI/CD.
+      Liderando decisiones de arquitectura y developer experience para un Data Portal
+      que sirve snapshots de reportes BI y búsqueda. Construí LILO desde cero con
+      Arquitectura Hexagonal. Pionero en tooling de desarrollo asistido por IA para el
+      equipo. Ownership full-stack: React, Node.js/Express, PostgreSQL,
+      Redis, AWS S3, Terraform, y observabilidad con Datadog.
     highlights:
-      - "Reduje el bundle size un 40% mediante code splitting y tree shaking"
-      - "Lideré la migración de frontend monolítico a micro-frontends"
-      - "Establecí un design system usado por 3 equipos de producto"
+      - "Diseñé y construí LILO: servicio de snapshots en tiempo real con adapters multi-proveedor (Tableau, Looker, Glyph)"
+      - "Transformé OCR ingestion de un cron monolítico a un sistema de búsqueda production-grade con PostgreSQL full-text"
+      - "Pionero en AI tooling: directorio .ai/, 15+ skills, cursor commands, skill registry pattern"
+      - "Aceleré la test suite 3x migrando de ts-jest a SWC (83.9% coverage, 177/211 suites)"
+      - "Construí Privacy Tracker: herramienta de auditoría de compliance consultando 16 tablas de Databricks en paralelo"
 
   - role: "Software Developer"
-    company: "Empresa Anterior"
-    period: "Jun 2019 - Dic 2021"
+    company: "Qubika"
+    period: "Jun 2019 – Sep 2022"
     description: >
-      Desarrollo full-stack con React y Node.js.
-      Construcción y mantenimiento de APIs REST y servicios en tiempo real.
+      Desarrollo full-stack con React y Node.js en múltiples proyectos para clientes.
+      Enfoque en arquitectura frontend, optimización de performance, y construcción
+      de sistemas de componentes mantenibles.
     highlights:
-      - "Desarrollé dashboard de analítica en tiempo real para 10k+ usuarios diarios"
-      - "Implementé pipeline CI/CD reduciendo el tiempo de deploy un 60%"
-      - "Escribí suite de tests completa alcanzando 90% de cobertura"
+      - "Desarrollé dashboards de analítica en tiempo real sirviendo 10k+ usuarios diarios"
+      - "Implementé pipelines CI/CD reduciendo el tiempo de deploy un 60%"
+      - "Escribí suites de tests completas alcanzando 90% de cobertura"
+      - "Construí librerías de componentes reutilizables adoptadas en múltiples proyectos"
 
 skills:
   - category: "Frontend"
     items:
-      - name: "React / Next.js"
+      - name: "React"
         level: 95
       - name: "TypeScript"
-        level: 92
-      - name: "Astro"
-        level: 85
+        level: 95
+      - name: "Apollo Client / GraphQL"
+        level: 90
+      - name: "Zustand"
+        level: 88
       - name: "Tailwind CSS"
         level: 90
-      - name: "SolidJS"
-        level: 75
+      - name: "React Hook Form / Yup"
+        level: 85
+
   - category: "Backend"
     items:
-      - name: "Node.js"
+      - name: "Node.js / Express"
+        level: 95
+      - name: "PostgreSQL"
         level: 90
+      - name: "Knex.js"
+        level: 88
+      - name: "Redis"
+        level: 85
+      - name: "GraphQL / Apollo Server"
+        level: 88
       - name: "Go"
         level: 75
-      - name: "PostgreSQL"
-        level: 80
-      - name: "GraphQL"
-        level: 78
-  - category: "Herramientas & DevOps"
+
+  - category: "Infraestructura & DevOps"
     items:
-      - name: "Git"
-        level: 90
+      - name: "AWS (S3, IAM)"
+        level: 85
+      - name: "Terraform"
+        level: 80
       - name: "Docker"
         level: 85
-      - name: "CI/CD"
+      - name: "Datadog"
+        level: 82
+      - name: "CI/CD (GitHub Actions, Jenkins)"
         level: 88
-      - name: "AWS"
-        level: 75
+
+  - category: "Integraciones & Herramientas"
+    items:
+      - name: "Tableau API"
+        level: 90
+      - name: "Looker API"
+        level: 88
+      - name: "Databricks"
+        level: 80
+      - name: "LaunchDarkly"
+        level: 85
+      - name: "Tesseract.js"
+        level: 82
 
 projects:
-  - name: "Proyecto Open Source"
-    description: "Herramienta para desarrolladores que simplifica el mockeo de APIs"
-    tech: ["TypeScript", "Node.js", "Vitest"]
-    url: "https://ejemplo.com"
-    github: "https://github.com/tuusuario/proyecto"
+  - name: "LILO — Live Image Loader"
+    description: "Servicio de snapshots en tiempo real con Arquitectura Hexagonal. REST API con procesamiento async, adapters multi-proveedor, almacenamiento S3 con cache determinístico, store de procesos en Redis, y observabilidad completa."
+    tech: ["Node.js", "Express", "Redis", "PostgreSQL", "AWS S3", "Terraform"]
+    period: "Mar–May 2026"
 
-  - name: "Plataforma E-commerce"
-    description: "Tienda online completa con gestión de inventario en tiempo real"
-    tech: ["Next.js", "Stripe", "PostgreSQL", "Docker"]
-    url: "https://ejemplo.com"
+  - name: "OCR Search Pipeline"
+    description: "Transformé un cron OCR monolítico en un sistema de búsqueda production-grade. Tesseract.js con 8 workers concurrentes, búsqueda full-text en PostgreSQL con tsvector ponderado, materialized views con índices GIN."
+    tech: ["Node.js", "Tesseract.js", "PostgreSQL", "Datadog"]
+    period: "Nov 2025–Ene 2026"
 
-  - name: "CLI Tool"
-    description: "Herramienta de línea de comandos para scaffolding de microservicios"
-    tech: ["Go", "Cobra", "Docker"]
-    github: "https://github.com/tuusuario/cli-tool"
+  - name: "Privacy Tracker"
+    description: "Herramienta de auditoría de compliance consultando Databricks directamente. Búsqueda por Account/Session ID en 16 tablas con ejecución paralela, SQL dinámico con prevención de inyección, frontend con Zustand."
+    tech: ["Node.js", "React", "Zustand", "Databricks", "PostgreSQL"]
+    period: "Oct–Dic 2025"
 
-education:
-  - degree: "Lic. en Ciencias de la Computación"
-    institution: "Nombre de la Universidad"
-    period: "2015 - 2019"
-    details: "Graduado con honores. Enfoque en sistemas distribuidos e IA."
+  - name: "Custom Views System"
+    description: "Extendí el sistema de snapshots para capturar reportes Tableau filtrados y personalizados. Servicio backend CRUD, integración con snapshots, panel de admin para gestión de vistas."
+    tech: ["React", "Node.js", "Tableau API", "GraphQL"]
+    period: "Mar 2024–Oct 2025"
+
+  - name: "Hubs Platform"
+    description: "Home pages para equipos que organizan reportes y recursos. Reordenamiento drag-and-drop, Live View con iframes BI embebidos, sistema de favoritos, layouts responsive mobile."
+    tech: ["React", "GraphQL", "Apollo Client", "React Hook Form"]
+    period: "Sep 2022–Sep 2023"

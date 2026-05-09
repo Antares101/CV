@@ -7,6 +7,7 @@ interface ProjectItem {
   name: string;
   description: string;
   tech: string[];
+  period?: string;
   url?: string;
   github?: string;
 }
@@ -48,9 +49,16 @@ const t = useTranslations(locale);
             <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-p5-red opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true"></div>
 
             <!-- Project name -->
-            <h3 class="text-xl font-bold text-p5-white mb-3 group-hover:text-p5-red transition-colors p5-hover-skew">
+            <h3 class="text-xl font-bold text-p5-white mb-1 group-hover:text-p5-red transition-colors p5-hover-skew">
               {project.name}
             </h3>
+
+            <!-- Period -->
+            {project.period && (
+              <span class="text-xs font-mono text-p5-muted mb-3 block">
+                {project.period}
+              </span>
+            )}
 
             <!-- Description -->
             <p class="text-p5-muted mb-4 leading-relaxed">

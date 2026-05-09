@@ -4,7 +4,6 @@ import Hero from '../../components/sections/Hero.astro';
 import Experience from '../../components/sections/Experience.astro';
 import Skills from '../../components/sections/Skills.astro';
 import Projects from '../../components/sections/Projects.astro';
-import Education from '../../components/sections/Education.astro';
 import Contact from '../../components/sections/Contact.astro';
 
 // Load CV data
@@ -39,14 +38,9 @@ const cvData = yaml.load(fs.readFileSync('src/data/es/cv.yaml', 'utf-8')) as {
     name: string;
     description: string;
     tech: string[];
+    period?: string;
     url?: string;
     github?: string;
-  }>;
-  education: Array<{
-    degree: string;
-    institution: string;
-    period: string;
-    details?: string;
   }>;
 };
 
@@ -68,8 +62,6 @@ const locale = 'es';
   <Skills locale={locale} categories={cvData.skills} />
 
   <Projects locale={locale} items={cvData.projects} />
-
-  <Education locale={locale} items={cvData.education} />
 
   <Contact
     locale={locale}

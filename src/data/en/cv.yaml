@@ -1,99 +1,132 @@
 # ============================================
 # CV Data — English
-# Fill this with your real information
 # ============================================
 
 name: "Alejandro Mancebo"
-headline: "Full-Stack Developer & Software Architect"
+headline: "System Architect & Full-Stack Developer"
 about: >
-  Passionate about building elegant, performant web applications
-  with clean architecture and great developer experience.
-  I specialize in modern JavaScript/TypeScript ecosystems,
-  cloud-native architectures, and developer tooling.
+  Self-taught engineer who learns by doing. From CSS fixes to Hexagonal
+  Architecture in production — I build systems that scale. 4+ years designing
+  and shipping real-time data platforms, OCR pipelines, and compliance tools
+  for enterprise clients. Passionate about clean architecture, developer
+  experience, and making complex systems feel simple.
 location: "Montevideo, Uruguay"
 email: "antarebo@gmail.com"
 cv_pdf: "/cv.pdf"
 
 social:
-  github: "https://github.com/yourusername"
-  linkedin: "https://linkedin.com/in/yourusername"
+  github: "https://github.com/Antares101"
+  linkedin: "https://www.linkedin.com/in/amancebo/"
 
 experience:
-  - role: "Senior Software Engineer"
-    company: "Company Name"
-    period: "Jan 2022 - Present"
+  - role: "System Architect & DX Lead"
+    company: "Antares Solutions"
+    period: "Sep 2022 – Present"
     description: >
-      Leading frontend architecture and mentoring junior developers.
-      Driving migration to micro-frontends and improving CI/CD pipelines.
+      Leading architecture decisions and developer experience for a Data Portal
+      serving BI report snapshots and search. Built LILO from scratch with
+      Hexagonal Architecture. Pioneered AI-assisted development tooling for the
+      team. Full-stack ownership across React, Node.js/Express, PostgreSQL,
+      Redis, AWS S3, Terraform, and Datadog observability.
     highlights:
-      - "Reduced bundle size by 40% through code splitting and tree shaking"
-      - "Led migration from monolithic frontend to micro-frontend architecture"
-      - "Established design system used across 3 product teams"
+      - "Designed and built LILO: real-time snapshot service with multi-provider adapters (Tableau, Looker, Glyph)"
+      - "Transformed OCR ingestion from monolithic cron to production-grade search with PostgreSQL full-text"
+      - "Pioneered AI tooling: .ai/ directory, 15+ skills, cursor commands, skill registry pattern"
+      - "Accelerated test suite 3x by migrating from ts-jest to SWC (83.9% coverage, 177/211 suites)"
+      - "Built Privacy Tracker: compliance audit tool querying 16 Databricks tables in parallel"
 
   - role: "Software Developer"
-    company: "Previous Company"
-    period: "Jun 2019 - Dec 2021"
+    company: "Qubika"
+    period: "Jun 2019 – Sep 2022"
     description: >
-      Full-stack development with React and Node.js.
-      Built and maintained REST APIs and real-time services.
+      Full-stack development with React and Node.js across multiple client
+      projects. Focus on frontend architecture, performance optimization, and
+      building maintainable component systems.
     highlights:
-      - "Developed real-time analytics dashboard serving 10k+ daily users"
-      - "Implemented CI/CD pipeline reducing deployment time by 60%"
-      - "Wrote comprehensive test suite achieving 90% code coverage"
+      - "Developed real-time analytics dashboards serving 10k+ daily users"
+      - "Implemented CI/CD pipelines reducing deployment time by 60%"
+      - "Wrote comprehensive test suites achieving 90% code coverage"
+      - "Built reusable component libraries adopted across multiple projects"
 
 skills:
   - category: "Frontend"
     items:
-      - name: "React / Next.js"
+      - name: "React"
         level: 95
       - name: "TypeScript"
-        level: 92
-      - name: "Astro"
-        level: 85
+        level: 95
+      - name: "Apollo Client / GraphQL"
+        level: 90
+      - name: "Zustand"
+        level: 88
       - name: "Tailwind CSS"
         level: 90
-      - name: "SolidJS"
-        level: 75
+      - name: "React Hook Form / Yup"
+        level: 85
+
   - category: "Backend"
     items:
-      - name: "Node.js"
+      - name: "Node.js / Express"
+        level: 95
+      - name: "PostgreSQL"
         level: 90
+      - name: "Knex.js"
+        level: 88
+      - name: "Redis"
+        level: 85
+      - name: "GraphQL / Apollo Server"
+        level: 88
       - name: "Go"
         level: 75
-      - name: "PostgreSQL"
-        level: 80
-      - name: "GraphQL"
-        level: 78
-  - category: "Tools & DevOps"
+
+  - category: "Infrastructure & DevOps"
     items:
-      - name: "Git"
-        level: 90
+      - name: "AWS (S3, IAM)"
+        level: 85
+      - name: "Terraform"
+        level: 80
       - name: "Docker"
         level: 85
-      - name: "CI/CD"
+      - name: "Datadog"
+        level: 82
+      - name: "CI/CD (GitHub Actions, Jenkins)"
         level: 88
-      - name: "AWS"
-        level: 75
+
+  - category: "Integrations & Tools"
+    items:
+      - name: "Tableau API"
+        level: 90
+      - name: "Looker API"
+        level: 88
+      - name: "Databricks"
+        level: 80
+      - name: "LaunchDarkly"
+        level: 85
+      - name: "Tesseract.js"
+        level: 82
 
 projects:
-  - name: "Open Source Project"
-    description: "Developer tool that simplifies API mocking for frontend teams"
-    tech: ["TypeScript", "Node.js", "Vitest"]
-    url: "https://example.com"
-    github: "https://github.com/yourusername/project"
+  - name: "LILO — Live Image Loader"
+    description: "Real-time snapshot service with Hexagonal Architecture. REST API with async processing, multi-provider adapters, S3 storage with deterministic cache, Redis process store, and full observability."
+    tech: ["Node.js", "Express", "Redis", "PostgreSQL", "AWS S3", "Terraform"]
+    period: "Mar–May 2026"
 
-  - name: "E-commerce Platform"
-    description: "Full-featured online store with real-time inventory management"
-    tech: ["Next.js", "Stripe", "PostgreSQL", "Docker"]
-    url: "https://example.com"
+  - name: "OCR Search Pipeline"
+    description: "Transformed monolithic OCR cron into production-grade search. Tesseract.js with 8 concurrent workers, PostgreSQL full-text search with weighted tsvector, materialized views with GIN indexes."
+    tech: ["Node.js", "Tesseract.js", "PostgreSQL", "Datadog"]
+    period: "Nov 2025–Jan 2026"
 
-  - name: "CLI Tool"
-    description: "Command-line tool for scaffolding microservices with best practices"
-    tech: ["Go", "Cobra", "Docker"]
-    github: "https://github.com/yourusername/cli-tool"
+  - name: "Privacy Tracker"
+    description: "Compliance audit tool querying Databricks directly. Search by Account/Session ID across 16 tables with parallel execution, dynamic SQL with injection prevention, Zustand frontend."
+    tech: ["Node.js", "React", "Zustand", "Databricks", "PostgreSQL"]
+    period: "Oct–Dec 2025"
 
-education:
-  - degree: "B.Sc. in Computer Science"
-    institution: "University Name"
-    period: "2015 - 2019"
-    details: "Graduated with honors. Focus on distributed systems and AI."
+  - name: "Custom Views System"
+    description: "Extended snapshot system to capture filtered/customized Tableau reports. Backend CRUD service, snapshot integration, admin panel for view management."
+    tech: ["React", "Node.js", "Tableau API", "GraphQL"]
+    period: "Mar 2024–Oct 2025"
+
+  - name: "Hubs Platform"
+    description: "Team home pages for organizing reports and resources. Drag-and-drop reordering, Live View with embedded BI iframes, favorites system, mobile responsive layouts."
+    tech: ["React", "GraphQL", "Apollo Client", "React Hook Form"]
+    period: "Sep 2022–Sep 2023"

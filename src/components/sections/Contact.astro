@@ -63,17 +63,15 @@ const t = useTranslations(locale);
             </svg>
           </a>
 
-          <a
-            href={cvPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p5-confirm-btn-outline"
+          <span
+            class="p5-confirm-btn-outline opacity-50 cursor-not-allowed"
+            title={t('contact.coming_soon')}
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            {t('contact.download')}
-          </a>
+            {t('contact.coming_soon')}
+          </span>
         </div>
 
         <!-- Social links — P5 angular style -->

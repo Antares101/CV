@@ -11,5 +11,6 @@ export default defineConfig({
     defaultLocale: 'en',
     locales: ['en', 'es'],
   },
-  site: 'https://antares101.github.io/CV',
+  site: 'https://antares101.github.io',
+  base: '/CV',
 });
