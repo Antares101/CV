@@ -13,7 +13,8 @@ export interface Props {
 
 const { locale, title = 'CV', description } = Astro.props;
 const t = useTranslations(locale);
-const canonicalURL = locale === 'en' ? '/' : `/${locale}/`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const canonicalURL = locale === 'en' ? `${base}/` : `${base}/${locale}/`;
 const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
 ---
 
