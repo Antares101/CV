@@ -53,20 +53,27 @@
     color: #000 !important;
   }
 
-  /* Cards without borders */
-  .rounded-2xl {
+  /* Cards — match current P5 card classes */
+  .p5-card-aggressive,
+  [class*="border-p5-gray"] {
     border: 1px solid #ccc !important;
     padding: 0.75rem !important;
     margin-bottom: 0.75rem !important;
   }
 
   /* Skill bars as solid fills */
-  .h-2 {
+  .p5-skill-bar-track {
     border: 1px solid #999;
   }
 
-  .h-2 > div {
+  .p5-skill-bar-fill {
     background: #333 !important;
+  }
+
+  /* Hide timeline decorations in print */
+  .p5-timeline-dot-enhanced,
+  [class*="bg-gradient-to-b"][class*="from-p5-red"] {
+    display: none !important;
   }
 
   /* Ensure page breaks are clean */
