@@ -20,7 +20,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      class="flex items-center justify-center w-9 h-9 border-2 border-p5-gray text-p5-muted hover:border-p5-red hover:text-p5-red hover:shadow-[0_0_10px_rgba(229,57,53,0.3)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-p5-red p5-hover-skew"
+      class="flex items-center justify-center w-9 h-9 border-2 border-p5-gray text-p5-muted hover:border-p5-red hover:text-p5-red hover:shadow-[0_0_10px_rgba(229,57,53,0.3)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-p5-red p5-hover-skew p5-angular-border-sm"
       aria-label={dark() ? 'Switch to light mode' : 'Switch to dark mode'}
       title={dark() ? 'Switch to light mode' : 'Switch to dark mode'}
     >

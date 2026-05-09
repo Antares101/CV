@@ -579,7 +579,6 @@
 .p5-hover-skew {
   position: relative;
   z-index: 1;
-  display: inline-block;
 }
 
 .p5-hover-skew::before,
@@ -639,4 +638,606 @@
 .light .p5-confirm-btn-outline {
   color: var(--p5-black);
   border-color: var(--p5-black);
+}
+
+/* ============================================================================
+   P5 NAV LINK — aggressive angular menu style
+   ============================================================================ */
+
+.p5-nav-link {
+  position: relative;
+  padding: 0.35rem 0.75rem;
+  transition: all 0.15s ease-out;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+.p5-nav-link:hover {
+  color: var(--p5-white);
+  background: var(--p5-red);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.p5-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--p5-red);
+  transition: width 0.2s ease-out;
+}
+
+.p5-nav-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================================================
+   P5 SECTION HEADER — dramatic section title with angular accent
+   ============================================================================ */
+
+.p5-section-header {
+  position: relative;
+  display: inline-block;
+}
+
+.p5-section-header::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 70%;
+  background: var(--p5-red);
+  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+}
+
+/* ============================================================================
+   P5 CARD ENHANCED — more aggressive borders and glow
+   ============================================================================ */
+
+.p5-card-aggressive {
+  position: relative;
+  background: var(--p5-dark);
+  border: 2px solid var(--p5-gray);
+  transition: all 0.2s ease-out;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+}
+
+.p5-card-aggressive:hover {
+  border-color: var(--p5-red);
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.3), 0 0 40px rgba(229, 57, 53, 0.1);
+}
+
+/* ============================================================================
+   P5 DECORATIVE DIAGONAL LINE — section accent
+   ============================================================================ */
+
+.p5-diagonal-accent {
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background: var(--p5-red);
+  transform: rotate(-35deg);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* ============================================================================
+   P5 ANGULAR TAG — tech tags with angular clip-path
+   ============================================================================ */
+
+.p5-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--p5-white);
+  background: var(--p5-red);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  position: relative;
+}
+
+.p5-tag::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+/* ============================================================================
+   P5 TIMELINE ENHANCED — more dramatic timeline dots
+   ============================================================================ */
+
+.p5-timeline-dot-enhanced {
+  width: 16px;
+  height: 16px;
+  background: var(--p5-red);
+  border: 3px solid var(--p5-black);
+  box-shadow: 0 0 10px rgba(229, 57, 53, 0.6), 0 0 20px rgba(229, 57, 53, 0.2);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  position: relative;
+}
+
+.p5-timeline-dot-enhanced::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--p5-red);
+  opacity: 0.3;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* ============================================================================
+   P5 SKILL BAR ENHANCED — angular progress bars
+   ============================================================================ */
+
+.p5-skill-bar-track {
+  width: 100%;
+  height: 6px;
+  background: var(--p5-gray);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.p5-skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--p5-red), var(--p5-red-light));
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 100%, 0 100%);
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.p5-skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--p5-white);
+  opacity: 0.5;
+}
+
+/* ============================================================================
+   P5 SOCIAL LINK — angular social icons
+   ============================================================================ */
+
+.p5-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--p5-gray);
+  color: var(--p5-muted);
+  transition: all 0.2s ease-out;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.p5-social-link:hover {
+  border-color: var(--p5-red);
+  color: var(--p5-red);
+  background: rgba(229, 57, 53, 0.1);
+  box-shadow: 0 0 15px rgba(229, 57, 53, 0.3);
+  transform: skewX(-3deg);
+}
+
+/* ============================================================================
+   P5 SECTION DIVIDER ENHANCED — angular divider with shards
+   ============================================================================ */
+
+.p5-section-divider-enhanced {
+  width: 100%;
+  height: 4px;
+  background: var(--p5-red);
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    15% 0,
+    18% 100%,
+    82% 100%,
+    85% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+.p5-section-divider-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--p5-red) 0px,
+    var(--p5-red) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* ============================================================================
+   P5 HERO ACCENT — dramatic angular accent for hero section
+   ============================================================================ */
+
+.p5-hero-accent {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  opacity: 0.08;
+}
+
+.p5-hero-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--p5-red);
+  clip-path: polygon(0 0, 100% 0, 30% 100%);
+}
+
+.p5-hero-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--p5-red);
+  clip-path: polygon(70% 0, 100% 0, 100% 100%);
+  opacity: 0.5;
+}
+
+/* ============================================================================
+   P5 GLITCH TEXT — subtle text glitch effect for headings
+   ============================================================================ */
+
+.p5-glitch-text {
+  position: relative;
+}
+
+.p5-glitch-text::before,
+.p5-glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.p5-glitch-text::before {
+  color: var(--p5-red);
+  animation: p5Glitch1 3s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  opacity: 0;
+}
+
+.p5-glitch-text:hover::before {
+  opacity: 0.5;
+}
+
+.p5-glitch-text::after {
+  color: rgba(28, 254, 255, 0.5);
+  animation: p5Glitch2 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  opacity: 0;
+}
+
+.p5-glitch-text:hover::after {
+  opacity: 0.5;
+}
+
+@keyframes p5Glitch1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes p5Glitch2 {
+  0% { transform: translate(0); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(-2px, 1px); }
+  75% { transform: translate(1px, 2px); }
+  100% { transform: translate(0); }
+}
+
+/* ============================================================================
+   P5 PULSE DOT — animated dot for timeline and status indicators
+   ============================================================================ */
+
+.p5-pulse-dot {
+  position: relative;
+}
+
+.p5-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--p5-red);
+  border-radius: 50%;
+  animation: p5PulseDot 2s ease-in-out infinite;
+}
+
+@keyframes p5PulseDot {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+/* ============================================================================
+   P5 DECORATIVE CORNER — angular corner accents for sections
+   ============================================================================ */
+
+.p5-corner-accent-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.p5-corner-accent-tl::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--p5-red);
+}
+
+.p5-corner-accent-tl::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--p5-red);
+}
+
+.p5-corner-accent-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.p5-corner-accent-br::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--p5-red);
+}
+
+.p5-corner-accent-br::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--p5-red);
+}
+
+/* ============================================================================
+   P5 SCAN LINE — subtle horizontal scan line overlay
+   ============================================================================ */
+
+.p5-scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ============================================================================
+   P5 ANGULAR BORDER — clip-path for aggressive card borders
+   ============================================================================ */
+
+.p5-angular-border {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+.p5-angular-border-sm {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+/* ============================================================================
+   P5 RED STRIPE BG — diagonal stripe background pattern
+   ============================================================================ */
+
+.p5-stripe-bg {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0px,
+    transparent 20px,
+    rgba(229, 57, 53, 0.03) 20px,
+    rgba(229, 57, 53, 0.03) 22px
+  );
+}
+
+/* ============================================================================
+   P5 FLOATING SHARD — animated decorative shard
+   ============================================================================ */
+
+@keyframes p5FloatShardEnhanced {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0);
+  }
+  15% {
+    opacity: 0.6;
+    transform: translateY(-15px) rotate(45deg) scale(1);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) rotate(135deg) scale(0.2);
+  }
+}
+
+.p5-float-shard-enhanced {
+  animation: p5FloatShardEnhanced 4s ease-in-out infinite;
+}
+
+.p5-float-shard-enhanced-delayed {
+  animation: p5FloatShardEnhanced 4s ease-in-out 2s infinite;
+}
+
+/* ============================================================================
+   P5 RED LINE DECORATION — animated red lines for sections
+   ============================================================================ */
+
+@keyframes p5LineSlideIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.p5-line-animate {
+  animation: p5LineSlideIn 0.8s ease-out forwards;
+}
+
+/* ============================================================================
+   BODY & NAV THEME COLORS
+   ============================================================================ */
+
+html.dark body {
+  background-color: var(--p5-black);
+  color: var(--p5-white);
+}
+
+html.light body {
+  background-color: var(--p5-white);
+  color: var(--p5-black);
+}
+
+nav.p5-nav-stripe {
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+html.light nav.p5-nav-stripe {
+  background-color: rgba(245, 245, 245, 0.95);
+}
+
+/* ============================================================================
+   LIGHT MODE OVERRIDES — for new components
+   ============================================================================ */
+
+.light .p5-nav-link:hover {
+  color: var(--p5-black);
+}
+
+.light .p5-tag {
+  color: var(--p5-white);
+}
+
+.light .p5-social-link {
+  border-color: var(--p5-light-gray);
+}
+
+.light .p5-social-link:hover {
+  border-color: var(--p5-red);
+}
+
+.light .p5-corner-accent-tl::before,
+.light .p5-corner-accent-tl::after,
+.light .p5-corner-accent-br::before,
+.light .p5-corner-accent-br::after {
+  background: var(--p5-red);
+}
+
+.light .p5-skill-bar-track {
+  background: var(--p5-light-gray);
+}
+
+.light .p5-stripe-bg {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0px,
+    transparent 20px,
+    rgba(229, 57, 53, 0.05) 20px,
+    rgba(229, 57, 53, 0.05) 22px
+  );
+}
+
+/* ============================================================================
+   LIGHT MODE — section background overrides
+   ============================================================================ */
+
+html.light section.bg-p5-black,
+html.light div.bg-p5-black {
+  background-color: var(--p5-white);
+}
+
+html.light section.bg-p5-dark,
+html.light div.bg-p5-dark {
+  background-color: var(--p5-light-gray);
+}
+
+html.light .text-p5-white {
+  color: var(--p5-black);
+}
+
+html.light .text-p5-muted {
+  color: #666666;
 }

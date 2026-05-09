@@ -25,26 +25,36 @@ const t = useTranslations(locale);
 ---
 
 <section id="skills" class="relative py-24 sm:py-32 bg-p5-dark scroll-mt-16 overflow-hidden">
+  <!-- Decorative elements -->
   <div class="p5-shard-corner-tl" aria-hidden="true"></div>
   <div class="p5-shard-corner-br" aria-hidden="true"></div>
+  <div class="p5-corner-accent-tl" aria-hidden="true"></div>
+  <div class="p5-corner-accent-br" aria-hidden="true"></div>
+
+  <!-- Diagonal accent lines -->
+  <div class="absolute top-1/3 -left-10 w-32 h-[2px] bg-p5-red/10 rotate-[-35deg]" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 -right-10 w-32 h-[2px] bg-p5-red/10 rotate-[-35deg]" aria-hidden="true"></div>
+
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <AnimatedSection client:visible>
-      <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-p5-white mb-2">
+      <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-p5-white mb-2 p5-section-header">
         {t('section.skills')}
       </h2>
-      <div class="p5-section-divider mb-12"></div>
+      <div class="p5-section-divider-enhanced mb-12"></div>
     </AnimatedSection>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {categories.map((category) => (
         <AnimatedSection client:visible>
-          <Persona5Card>
-            <h3 class="font-bold text-p5-white mb-6 flex items-center gap-2 uppercase text-sm tracking-wider p5-hover-skew">
-              <span class="w-2 h-2 bg-p5-red"></span>
-              {category.category}
-            </h3>
+          <Persona5Card class="p5-card-aggressive">
+            <div class="p-6">
+              <h3 class="font-bold text-p5-white mb-6 flex items-center gap-2 uppercase text-sm tracking-wider p5-hover-skew">
+                <span class="w-2 h-2 bg-p5-red clip-path-none" style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)"></span>
+                {category.category}
+              </h3>
 
-            <SkillBars skills={category.items} />
+              <SkillBars skills={category.items} />
+            </div>
           </Persona5Card>
         </AnimatedSection>
       ))}

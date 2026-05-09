@@ -33,6 +33,8 @@ export default {
         'p5-bounce-in': 'p5BounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
         'p5-skew-in': 'p5SkewIn 0.6s ease-out forwards',
         'p5-pulse': 'p5Pulse 2s ease-in-out infinite',
+        'p5-tape-slide': 'p5TapeSlide 8s linear infinite',
+        'p5-corner-flash': 'p5CornerFlash 3s ease-in-out infinite',
       },
       keyframes: {
         p5FadeIn: {
@@ -76,6 +78,14 @@ export default {
         p5Pulse: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
+        },
+        p5TapeSlide: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '80px 0' },
+        },
+        p5CornerFlash: {
+          '0%, 100%': { opacity: '0.15' },
+          '50%': { opacity: '0.4' },
         },
       },
     },

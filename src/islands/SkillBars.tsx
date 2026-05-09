@@ -38,13 +38,13 @@ export default function SkillBars(props: Props) {
             <span class="text-sm font-semibold text-p5-white">
               {skill.name}
             </span>
-            <span class="text-xs font-mono text-p5-muted">
+            <span class="text-xs font-mono text-p5-red">
               {skill.level}%
             </span>
           </div>
-          <div class="w-full h-1.5 bg-p5-gray">
+          <div class="p5-skill-bar-track">
             <div
-              class="h-full bg-p5-red transition-all duration-1000 ease-out"
+              class="p5-skill-bar-fill"
               style={{ width: animated() ? `${skill.level}%` : '0%' }}
             />
           </div>

@@ -1,0 +1,300 @@
+---
+/**
+ * PoliceTape.astro — Persona 5 style "CAUTION / PROHIBIDO" diagonal tape
+ * Animated diagonal stripe that sits in the corner of the page.
+ * Pure CSS, no external images. Accessible (aria-hidden, pointer-events-none).
+ */
+export interface Props {
+  /** Position of the tape corner. Default: 'top-right' */
+  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+  /** Text displayed on the tape. Default: 'CAUTION' */
+  text?: string;
+  /** Additional CSS classes */
+  class?: string;
+}
+
+const {
+  position = 'top-right',
+  text = 'CAUTION',
+  class: className = '',
+} = Astro.props;
+
+const positionClasses: Record<string, string> = {
+  'top-right': 'p5-tape-top-right',
+  'top-left': 'p5-tape-top-left',
+  'bottom-right': 'p5-tape-bottom-right',
+  'bottom-left': 'p5-tape-bottom-left',
+};
+---
+
+<div
+  class:list={['p5-police-tape', positionClasses[position], className]}
+  aria-hidden="true"
+>
+  <div class="p5-tape-stripe"></div>
+  <div class="p5-tape-text">
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+    <span>{text}</span>
+  </div>
+</div>
+
+<style>
+  .p5-police-tape {
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* ===== TOP RIGHT ===== */
+  .p5-tape-top-right {
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p5-tape-top-right .p5-tape-stripe {
+    position: absolute;
+    top: 40px;
+    right: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(45deg);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--p5-red) 0px,
+      var(--p5-red) 32px,
+      var(--p5-black) 32px,
+      var(--p5-black) 64px
+    );
+    border-top: 2px solid var(--p5-white);
+    border-bottom: 2px solid var(--p5-white);
+    animation: p5TapeSlide 6s linear infinite;
+  }
+
+  .p5-tape-top-right .p5-tape-text {
+    position: absolute;
+    top: 40px;
+    right: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--p5-white);
+    white-space: nowrap;
+    gap: 1.5rem;
+    animation: p5TapeTextSlide 6s linear infinite;
+  }
+
+  /* ===== TOP LEFT ===== */
+  .p5-tape-top-left {
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p5-tape-top-left .p5-tape-stripe {
+    position: absolute;
+    top: 40px;
+    left: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(-45deg);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--p5-red) 0px,
+      var(--p5-red) 32px,
+      var(--p5-black) 32px,
+      var(--p5-black) 64px
+    );
+    border-top: 2px solid var(--p5-white);
+    border-bottom: 2px solid var(--p5-white);
+    animation: p5TapeSlide 6s linear infinite;
+  }
+
+  .p5-tape-top-left .p5-tape-text {
+    position: absolute;
+    top: 40px;
+    left: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--p5-white);
+    white-space: nowrap;
+    gap: 1.5rem;
+    animation: p5TapeTextSlide 6s linear infinite;
+  }
+
+  /* ===== BOTTOM RIGHT ===== */
+  .p5-tape-bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p5-tape-bottom-right .p5-tape-stripe {
+    position: absolute;
+    bottom: 40px;
+    right: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(-45deg);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--p5-red) 0px,
+      var(--p5-red) 32px,
+      var(--p5-black) 32px,
+      var(--p5-black) 64px
+    );
+    border-top: 2px solid var(--p5-white);
+    border-bottom: 2px solid var(--p5-white);
+    animation: p5TapeSlide 6s linear infinite;
+  }
+
+  .p5-tape-bottom-right .p5-tape-text {
+    position: absolute;
+    bottom: 40px;
+    right: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--p5-white);
+    white-space: nowrap;
+    gap: 1.5rem;
+    animation: p5TapeTextSlide 6s linear infinite;
+  }
+
+  /* ===== BOTTOM LEFT ===== */
+  .p5-tape-bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p5-tape-bottom-left .p5-tape-stripe {
+    position: absolute;
+    bottom: 40px;
+    left: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(45deg);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--p5-red) 0px,
+      var(--p5-red) 32px,
+      var(--p5-black) 32px,
+      var(--p5-black) 64px
+    );
+    border-top: 2px solid var(--p5-white);
+    border-bottom: 2px solid var(--p5-white);
+    animation: p5TapeSlide 6s linear infinite;
+  }
+
+  .p5-tape-bottom-left .p5-tape-text {
+    position: absolute;
+    bottom: 40px;
+    left: -80px;
+    width: 400px;
+    height: 48px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--p5-white);
+    white-space: nowrap;
+    gap: 1.5rem;
+    animation: p5TapeTextSlide 6s linear infinite;
+  }
+
+  /* ===== ANIMATIONS — seamless loop ===== */
+  /* The background pattern repeats every 64px, so we shift by exactly 64px
+     for a perfect seamless loop. Text moves in the SAME direction. */
+  @keyframes p5TapeSlide {
+    0% { background-position: 0 0; }
+    100% { background-position: 64px 0; }
+  }
+
+  @keyframes p5TapeTextSlide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-64px); }
+  }
+
+  /* Light mode adjustments */
+  :global(.light) .p5-tape-stripe {
+    border-top-color: var(--p5-black);
+    border-bottom-color: var(--p5-black);
+  }
+
+  :global(.light) .p5-tape-text {
+    color: var(--p5-white);
+  }
+
+  /* Responsive: hide on very small screens to avoid clutter */
+  @media (max-width: 640px) {
+    .p5-police-tape {
+      width: 180px;
+      height: 180px;
+    }
+    .p5-tape-stripe,
+    .p5-tape-text {
+      width: 260px;
+      height: 36px;
+      top: 24px;
+      right: -50px;
+      bottom: auto;
+      left: auto;
+    }
+    .p5-tape-top-left .p5-tape-stripe,
+    .p5-tape-top-left .p5-tape-text,
+    .p5-tape-bottom-left .p5-tape-stripe,
+    .p5-tape-bottom-left .p5-tape-text {
+      left: -50px;
+      right: auto;
+    }
+    .p5-tape-bottom-right .p5-tape-stripe,
+    .p5-tape-bottom-right .p5-tape-text,
+    .p5-tape-bottom-left .p5-tape-stripe,
+    .p5-tape-bottom-left .p5-tape-text {
+      top: auto;
+      bottom: 24px;
+    }
+    .p5-tape-text {
+      font-size: 0.6rem;
+      gap: 1rem;
+    }
+  }
+</style>
