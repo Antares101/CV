@@ -26,7 +26,7 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <link rel="canonical" href={`https://antares101.github.io/CV${canonicalURL}`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Prevent theme flash — P5 defaults to DARK always, only respects explicit user toggle -->
+    <!-- Prevent theme flash - P5 defaults to DARK always, only respects explicit user toggle -->
     <script is:inline>
       (function() {
         const theme = localStorage.getItem('theme');
@@ -53,27 +53,27 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
       Skip to main content
     </a>
 
-    <!-- Police Tape — P5 caution tape decoration -->
+    <!-- Police Tape - P5 caution tape decoration -->
     <PoliceTape position="top-right" text={tapeText} />
 
-    <!-- Navigation — P5 aggressive angular style -->
+    <!-- Navigation - P5 aggressive angular style -->
     <nav class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md border-b-2 border-p5-red/40 p5-nav-stripe">
       <!-- Red accent line above nav -->
       <div class="absolute top-0 left-0 right-0 h-[3px] bg-p5-red" aria-hidden="true"></div>
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <!-- Logo / Home — P5 angular style -->
+          <!-- Logo / Home - P5 angular style -->
           <a href={canonicalURL} class="font-display text-xl tracking-wider text-p5-white hover:text-p5-red transition-colors uppercase relative group">
             <span class="relative z-10">&lt;Antares101 /&gt;</span>
             <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-p5-red transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
           </a>
 
-          <!-- Desktop Nav — P5 menu style -->
+          <!-- Desktop Nav - P5 menu style -->
           <div class="hidden md:flex items-center gap-1 text-sm font-semibold uppercase tracking-wider text-p5-muted">
-            <a href="#experience" class="p5-nav-link p5-hover-skew">{t('nav.experience')}</a>
-            <a href="#skills" class="p5-nav-link p5-hover-skew">{t('nav.skills')}</a>
-            <a href="#projects" class="p5-nav-link p5-hover-skew">{t('nav.projects')}</a>
-            <a href="#contact" class="p5-nav-link p5-hover-skew">{t('nav.contact')}</a>
+            <a href="#experience" class="p5-nav-link">{t('nav.experience')}</a>
+            <a href="#skills" class="p5-nav-link">{t('nav.skills')}</a>
+            <a href="#projects" class="p5-nav-link">{t('nav.projects')}</a>
+            <a href="#contact" class="p5-nav-link">{t('nav.contact')}</a>
           </div>
 
           <!-- Right side controls -->
@@ -105,7 +105,7 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
       </div>
     </main>
 
-    <!-- Footer — P5 style -->
+    <!-- Footer - P5 style -->
     <footer class="relative border-t-2 border-p5-red/40 py-10 text-center overflow-hidden">
       <!-- Decorative shard corners -->
       <div class="p5-shard-corner-tl" aria-hidden="true"></div>

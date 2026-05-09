@@ -1,6 +1,6 @@
 ---
 /**
- * PoliceTape.astro — Persona 5 style "CAUTION / PROHIBIDO" diagonal tape
+ * PoliceTape.astro - Persona 5 style "CAUTION / PROHIBIDO" diagonal tape
  * Animated diagonal stripe that sits in the corner of the page.
  * Pure CSS, no external images. Accessible (aria-hidden, pointer-events-none).
  */
@@ -87,7 +87,7 @@ const positionClasses: Record<string, string> = {
     );
     border-top: 2px solid var(--p5-white);
     border-bottom: 2px solid var(--p5-white);
-    animation: p5TapeSlide 6s linear infinite;
+    animation: p5TapeSlide 12s linear infinite;
   }
 
   @media (min-width: 1024px) {
@@ -116,7 +116,7 @@ const positionClasses: Record<string, string> = {
     color: var(--p5-white);
     white-space: nowrap;
     gap: 2rem;
-    animation: p5TapeTextSlide 6s linear infinite;
+    animation: p5TapeTextSlide 12s linear infinite;
   }
 
   @media (min-width: 1024px) {
@@ -154,7 +154,7 @@ const positionClasses: Record<string, string> = {
     );
     border-top: 2px solid var(--p5-white);
     border-bottom: 2px solid var(--p5-white);
-    animation: p5TapeSlide 6s linear infinite;
+    animation: p5TapeSlide 12s linear infinite;
   }
 
   .p5-tape-top-left .p5-tape-text {
@@ -173,7 +173,7 @@ const positionClasses: Record<string, string> = {
     color: var(--p5-white);
     white-space: nowrap;
     gap: 1.5rem;
-    animation: p5TapeTextSlide 6s linear infinite;
+    animation: p5TapeTextSlide 12s linear infinite;
   }
 
   /* ===== BOTTOM RIGHT ===== */
@@ -200,7 +200,7 @@ const positionClasses: Record<string, string> = {
     );
     border-top: 2px solid var(--p5-white);
     border-bottom: 2px solid var(--p5-white);
-    animation: p5TapeSlide 6s linear infinite;
+    animation: p5TapeSlide 12s linear infinite;
   }
 
   .p5-tape-bottom-right .p5-tape-text {
@@ -219,7 +219,7 @@ const positionClasses: Record<string, string> = {
     color: var(--p5-white);
     white-space: nowrap;
     gap: 1.5rem;
-    animation: p5TapeTextSlide 6s linear infinite;
+    animation: p5TapeTextSlide 12s linear infinite;
   }
 
   /* ===== BOTTOM LEFT ===== */
@@ -246,7 +246,7 @@ const positionClasses: Record<string, string> = {
     );
     border-top: 2px solid var(--p5-white);
     border-bottom: 2px solid var(--p5-white);
-    animation: p5TapeSlide 6s linear infinite;
+    animation: p5TapeSlide 12s linear infinite;
   }
 
   .p5-tape-bottom-left .p5-tape-text {
@@ -265,7 +265,7 @@ const positionClasses: Record<string, string> = {
     color: var(--p5-white);
     white-space: nowrap;
     gap: 1.5rem;
-    animation: p5TapeTextSlide 6s linear infinite;
+    animation: p5TapeTextSlide 12s linear infinite;
   }
 
   /* ===== ANIMATIONS — seamless loop ===== */
@@ -273,12 +273,12 @@ const positionClasses: Record<string, string> = {
      for a perfect seamless loop. Text moves in the SAME direction. */
   @keyframes p5TapeSlide {
     0% { background-position: 0 0; }
-    100% { background-position: 64px 0; }
+    100% { background-position: 128px 0; }
   }
 
   @keyframes p5TapeTextSlide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-64px); }
+    100% { transform: translateX(-128px); }
   }
 
   /* Light mode adjustments */

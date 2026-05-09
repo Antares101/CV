@@ -49,7 +49,7 @@ const t = useTranslations(locale);
             <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-p5-red opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true"></div>
 
             <!-- Project name -->
-            <h3 class="text-xl font-bold text-p5-white mb-1 group-hover:text-p5-red transition-colors p5-hover-skew">
+            <h3 class="text-xl font-bold text-p5-white mb-1 group-hover:text-p5-red transition-colors">
               {project.name}
             </h3>
 
@@ -65,7 +65,7 @@ const t = useTranslations(locale);
               {project.description}
             </p>
 
-            <!-- Tech tags — P5 angular style -->
+            <!-- Tech tags - P5 angular style -->
             <div class="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech) => (
                 <span class="p5-tag">

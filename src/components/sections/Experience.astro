@@ -41,21 +41,21 @@ const t = useTranslations(locale);
     </AnimatedSection>
 
     <div class="relative">
-      <!-- P5 Timeline line — more dramatic -->
+      <!-- P5 Timeline line - more dramatic -->
       <div class="absolute left-0 md:left-8 top-0 bottom-0 w-[3px] bg-gradient-to-b from-p5-red via-p5-red/50 to-p5-red/10" aria-hidden="true"></div>
 
       <div class="space-y-16">
         {items.map((item) => (
           <AnimatedSection client:visible>
             <div class="relative pl-8 md:pl-20">
-              <!-- P5 Timeline dot — diamond shape -->
+              <!-- P5 Timeline dot - diamond shape -->
               <div class="absolute left-0 md:left-8 top-1 p5-timeline-dot-enhanced -translate-x-[8px]" aria-hidden="true"></div>
 
-              <!-- P5 Card — enhanced -->
+              <!-- P5 Card - enhanced -->
               <Persona5Card class="p5-card-aggressive">
                 <div class="p-6">
                   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1">
-                    <h3 class="text-xl font-bold text-p5-white p5-hover-skew">
+                    <h3 class="text-xl font-bold text-p5-white">
                       {item.role}
                       <span class="text-p5-red"> · {item.company}</span>
                     </h3>
