@@ -64,42 +64,70 @@ const positionClasses: Record<string, string> = {
     height: 280px;
   }
 
+  @media (min-width: 1024px) {
+    .p5-tape-top-right {
+      width: 380px;
+      height: 380px;
+    }
+  }
+
   .p5-tape-top-right .p5-tape-stripe {
     position: absolute;
-    top: 40px;
-    right: -80px;
-    width: 400px;
-    height: 48px;
+    top: 50px;
+    right: -100px;
+    width: 500px;
+    height: 56px;
     transform: rotate(45deg);
     background: repeating-linear-gradient(
-      90deg,
+      45deg,
       var(--p5-red) 0px,
-      var(--p5-red) 32px,
-      var(--p5-black) 32px,
-      var(--p5-black) 64px
+      var(--p5-red) 40px,
+      var(--p5-black) 40px,
+      var(--p5-black) 80px
     );
     border-top: 2px solid var(--p5-white);
     border-bottom: 2px solid var(--p5-white);
     animation: p5TapeSlide 6s linear infinite;
   }
 
+  @media (min-width: 1024px) {
+    .p5-tape-top-right .p5-tape-stripe {
+      top: 70px;
+      right: -140px;
+      width: 700px;
+      height: 72px;
+    }
+  }
+
   .p5-tape-top-right .p5-tape-text {
     position: absolute;
-    top: 40px;
-    right: -80px;
-    width: 400px;
-    height: 48px;
+    top: 50px;
+    right: -100px;
+    width: 500px;
+    height: 56px;
     transform: rotate(45deg);
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Anton', 'Impact', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--p5-white);
     white-space: nowrap;
-    gap: 1.5rem;
+    gap: 2rem;
     animation: p5TapeTextSlide 6s linear infinite;
+  }
+
+  @media (min-width: 1024px) {
+    .p5-tape-top-right .p5-tape-text {
+      top: 70px;
+      right: -140px;
+      width: 700px;
+      height: 72px;
+      font-size: 1.1rem;
+      gap: 2.5rem;
+    }
   }
 
   /* ===== TOP LEFT ===== */

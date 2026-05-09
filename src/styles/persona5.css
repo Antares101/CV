@@ -1166,9 +1166,13 @@ html.dark body {
   color: var(--p5-white);
 }
 
-html.light body {
-  background-color: var(--p5-white);
-  color: var(--p5-black);
+html.light body,
+html.dark body {
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 nav.p5-nav-stripe {
@@ -1239,5 +1243,66 @@ html.light .text-p5-white {
 }
 
 html.light .text-p5-muted {
-  color: #666666;
+  color: #555555;
+}
+
+/* Light mode — borders and cards */
+html.light .border-p5-gray {
+  border-color: var(--p5-light-gray);
+}
+
+html.light .border-p5-red\/40 {
+  border-color: rgba(229, 57, 53, 0.4);
+}
+
+html.light .bg-p5-dark {
+  background-color: var(--p5-light-gray);
+}
+
+/* Light mode — skill bars */
+html.light .p5-skill-bar-track {
+  background: var(--p5-light-gray);
+}
+
+/* Light mode — tags */
+html.light .p5-tag {
+  background: var(--p5-red);
+  color: var(--p5-white);
+}
+
+/* Light mode — nav */
+html.light nav.p5-nav-stripe {
+  background-color: rgba(245, 245, 245, 0.95);
+  border-color: rgba(229, 57, 53, 0.4);
+}
+
+/* Light mode — social links */
+html.light .p5-social-link {
+  border-color: var(--p5-light-gray);
+  color: var(--p5-black);
+}
+
+html.light .p5-social-link:hover {
+  border-color: var(--p5-red);
+  color: var(--p5-red);
+}
+
+/* Light mode — section cards */
+html.light .p5-card-aggressive {
+  background-color: var(--p5-white);
+  border-color: var(--p5-light-gray);
+}
+
+html.light .p5-card-aggressive:hover {
+  border-color: var(--p5-red);
+}
+
+/* Light mode — timeline */
+html.light .p5-timeline-dot-enhanced {
+  border-color: var(--p5-white);
+}
+
+/* Light mode — footer */
+html.light footer.border-p5-red\/40 {
+  border-color: rgba(229, 57, 53, 0.4);
 }
