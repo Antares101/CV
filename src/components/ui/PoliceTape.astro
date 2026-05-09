@@ -105,7 +105,7 @@ const positionClasses: Record<string, string> = {
     right: -100px;
     width: 500px;
     height: 56px;
-    transform: rotate(45deg);
+    --tape-angle: 45deg;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,9 +163,10 @@ const positionClasses: Record<string, string> = {
     left: -80px;
     width: 400px;
     height: 48px;
-    transform: rotate(-45deg);
+    --tape-angle: -45deg;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Anton', 'Impact', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
@@ -209,9 +210,10 @@ const positionClasses: Record<string, string> = {
     right: -80px;
     width: 400px;
     height: 48px;
-    transform: rotate(-45deg);
+    --tape-angle: -45deg;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Anton', 'Impact', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
@@ -255,9 +257,10 @@ const positionClasses: Record<string, string> = {
     left: -80px;
     width: 400px;
     height: 48px;
-    transform: rotate(45deg);
+    --tape-angle: 45deg;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Anton', 'Impact', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
@@ -277,8 +280,8 @@ const positionClasses: Record<string, string> = {
   }
 
   @keyframes p5TapeTextSlide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { transform: rotate(var(--tape-angle)) translateX(0); }
+    100% { transform: rotate(var(--tape-angle)) translateX(-50%); }
   }
 
   /* Light mode adjustments */
