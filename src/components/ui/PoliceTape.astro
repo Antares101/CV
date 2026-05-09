@@ -268,17 +268,17 @@ const positionClasses: Record<string, string> = {
     animation: p5TapeTextSlide 12s linear infinite;
   }
 
-  /* ===== ANIMATIONS — seamless loop ===== */
-  /* The background pattern repeats every 64px, so we shift by exactly 64px
-     for a perfect seamless loop. Text moves in the SAME direction. */
+  /* ===== ANIMATIONS - seamless loop ===== */
+  /* Background pattern repeats every 80px (40px red + 40px black).
+     We shift by 160px = 2 full cycles for a perfect seamless loop. */
   @keyframes p5TapeSlide {
     0% { background-position: 0 0; }
-    100% { background-position: 128px 0; }
+    100% { background-position: 160px 0; }
   }
 
   @keyframes p5TapeTextSlide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-128px); }
+    100% { transform: translateX(-50%); }
   }
 
   /* Light mode adjustments */
