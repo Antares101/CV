@@ -63,27 +63,18 @@ const nameParts = name.split(' ');
   </div>
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-    <!-- Profile Photo — P5 WANTED style placeholder -->
+    <!-- Profile Photo — P5 WANTED poster style -->
     <div class="mb-8 animate-p5-fade-in" style="animation-delay: 100ms">
-      <div class="relative inline-block">
-        <!-- Angular frame -->
-        <div class="absolute -inset-1 bg-p5-red p5-angular-border-sm opacity-60"></div>
-        <div class="absolute -inset-[3px] border-2 border-p5-white p5-angular-border-sm opacity-40"></div>
-        <!-- Photo placeholder -->
-        <div class="relative w-32 h-32 sm:w-40 sm:h-40 bg-p5-dark border-2 border-p5-red p5-angular-border-sm flex items-center justify-center overflow-hidden">
-          <img
-            src="/images/profile.jpg"
-            alt="Alejandro Mancebo"
-            class="w-full h-full object-cover"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="hidden absolute inset-0 items-center justify-center text-p5-muted font-mono text-xs text-center px-2">
-            <span>PHOTO<br/>P5 STYLE<br/>COMING SOON</span>
-          </div>
-        </div>
-        <!-- Corner accents -->
-        <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-p5-red" aria-hidden="true"></div>
-        <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-p5-red" aria-hidden="true"></div>
+      <div class="relative inline-block group">
+        <!-- Red glow behind -->
+        <div class="absolute -inset-2 bg-p5-red/20 blur-xl rounded-lg opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+        <!-- Photo -->
+        <img
+          src="/CV/images/profile.png"
+          alt="Alejandro Mancebo — Phantom Thief"
+          class="relative w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-lg shadow-2xl"
+          loading="eager"
+        />
       </div>
     </div>
 
