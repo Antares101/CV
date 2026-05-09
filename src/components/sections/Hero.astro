@@ -68,7 +68,7 @@ const nameParts = name.split(' ');
       <!-- Text content -->
       <div class="flex-1 text-center lg:text-left max-w-2xl">
         <!-- Name with P5 style - more dramatic -->
-        <h1 class="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-wider uppercase mb-4 animate-p5-skew-in p5-glitch-text" data-text={name}>
+        <h1 class="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-wide sm:tracking-wider uppercase mb-4 animate-p5-skew-in p5-glitch-text" data-text={name}>
           {nameParts.length > 1 ? (
             <>
               <span class="text-p5-white">{nameParts.slice(0, -1).join(' ')}</span>
@@ -134,7 +134,7 @@ const nameParts = name.split(' ');
           <!-- Red glow behind -->
           <div class="absolute -inset-3 bg-p5-red/15 blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
           <!-- P5 angular frame -->
-          <div class="relative p-1">
+          <div class="relative p-1 overflow-hidden aspect-video">
             <!-- Corner cuts -->
             <div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-p5-red z-10"></div>
             <div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-p5-red z-10"></div>
@@ -144,9 +144,15 @@ const nameParts = name.split(' ');
             <img
               src="/CV/images/profile.png"
               alt="Alejandro Mancebo — Phantom Thief"
+              width="2730"
+              height="1536"
+              srcset="/CV/images/profile.png 400w, /CV/images/profile.png 800w, /CV/images/profile.png 1200w"
+              sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 500px"
               class="relative w-72 h-auto sm:w-80 lg:w-[420px] object-cover shadow-2xl"
               style="clip-path: polygon(4% 0%, 96% 0%, 100% 4%, 100% 96%, 96% 100%, 4% 100%, 0% 96%, 0% 4%);"
               loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
         </div>
