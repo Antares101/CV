@@ -4,6 +4,7 @@ import { useTranslations } from '../i18n/ui';
 import LanguageToggle from '../components/ui/LanguageToggle.astro';
 import PoliceTape from '../components/ui/PoliceTape.astro';
 import ThemeToggle from '../islands/ThemeToggle';
+import ScrollToTop from '../components/ui/ScrollToTop.astro';
 
 export interface Props {
   locale: Locale;
@@ -205,6 +206,9 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
         });
       })();
     </script>
+
+    <!-- Scroll to top button -->
+    <ScrollToTop />
   </body>
 </html>
 
