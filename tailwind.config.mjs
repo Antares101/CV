@@ -20,6 +20,7 @@ export default {
           'light-gray': '#e0e0e0',
           white: '#f5f5f5',
           muted: '#999999',
+          yellow: '#fbc02d',
         },
       },
       animation: {
