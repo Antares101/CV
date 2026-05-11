@@ -1,0 +1,37 @@
+---
+// ScrollProgress.astro - Scroll progress bar at the top of the page
+---
+
+<div
+  id="scroll-progress"
+  class="fixed top-0 left-0 z-50 h-[3px] bg-p5-red transition-[width] duration-100 ease-out"
+  style="width: 0%"
+  aria-hidden="true"
+></div>
+
+<script is:inline>
+  (function() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  })();
+</script>
+
+<style>
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    #scroll-progress {
+      transition: none !important;
+    }
+  }
+</style>

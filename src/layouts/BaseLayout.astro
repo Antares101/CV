@@ -4,6 +4,7 @@ import { useTranslations } from '../i18n/ui';
 import LanguageToggle from '../components/ui/LanguageToggle.astro';
 import PoliceTape from '../components/ui/PoliceTape.astro';
 import ThemeToggle from '../islands/ThemeToggle';
+import ScrollProgress from '../components/ui/ScrollProgress.astro';
 
 export interface Props {
   locale: Locale;
@@ -49,6 +50,9 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <title>{title} | Antares101</title>
   </head>
   <body class="antialiased">
+    <!-- Scroll progress bar -->
+    <ScrollProgress />
+
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-p5-red focus:text-white focus:rounded-none">
       Skip to main content
