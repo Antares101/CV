@@ -3,14 +3,16 @@
 # ============================================
 
 name: "Alejandro Mancebo"
-headline: "Arquitecto de Sistemas & Full-Stack Developer"
+headline: "Arquitecto de Sistemas & Full-Stack Developer con IA | Arquitectura Hexagonal | Plataformas de Datos Enterprise"
 about: >
-  Ingeniero autodidacta que aprende haciendo. Desde arreglos de CSS hasta
-  Arquitectura Hexagonal en producción — construyo sistemas que escalan.
-  Más de 4 años diseñando y deployando plataformas de datos en tiempo real,
-  pipelines OCR, y herramientas de compliance para clientes enterprise.
-  Apasionado por la arquitectura limpia, la developer experience, y hacer
-  que sistemas complejos se sientan simples.
+  Arquitecto de Sistemas con más de 5 años construyendo plataformas enterprise
+  que sirven a 10k+ usuarios diarios. Especializado en Arquitectura Hexagonal,
+  sistemas de datos en tiempo real, y flujos de desarrollo potenciados por IA.
+  Lideré decisiones arquitectónicas para Data Portal sirviendo a clientes Fortune 500,
+  transformando sistemas monolíticos en microservicios escalables. Pionero en
+  herramientas de desarrollo asistido por IA, logrando 3x aceleración en tests
+  y 60% deploys más rápidos. Apasionado por la arquitectura limpia, la developer
+  experience, y hacer que sistemas complejos se sientan simples.
 location: "Montevideo, Uruguay"
 email: "antarebo@gmail.com"
 cv_pdf: "/cv.pdf"
@@ -25,29 +27,31 @@ experience:
     period: "Sep 2022 – Actualidad"
     description: >
       Liderando decisiones de arquitectura y developer experience para un Data Portal
-      que sirve snapshots de reportes BI y búsqueda. Construí LILO desde cero con
-      Arquitectura Hexagonal. Pionero en tooling de desarrollo asistido por IA para el
-      equipo. Ownership full-stack: React, Node.js/Express, PostgreSQL,
-      Redis, AWS S3, Terraform, y observabilidad con Datadog.
+      sirviendo a clientes Fortune 500 con snapshots de reportes BI y búsqueda en tiempo real.
+      Construí LILO desde cero con Arquitectura Hexagonal, sirviendo a 10k+ usuarios
+      diarios con 99.9% uptime. Pionero en tooling de desarrollo asistido por IA,
+      logrando 3x aceleración en tests y 60% deploys más rápidos.
     highlights:
-      - "Diseñé y construí LILO: servicio de snapshots en tiempo real con adapters multi-proveedor (Tableau, Looker, Glyph)"
-      - "Transformé OCR ingestion de un cron monolítico a un sistema de búsqueda production-grade con PostgreSQL full-text"
-      - "Pionero en AI tooling: directorio .ai/, 15+ skills, cursor commands, skill registry pattern"
+      - "Arquitecté LILO: servicio de snapshots en tiempo real con adapters multi-proveedor (Tableau, Looker, Glyph), procesando 50k+ snapshots/mes"
+      - "Transformé OCR ingestion de un cron monolítico a un sistema de búsqueda production-grade con PostgreSQL full-text, reduciendo tiempo de búsqueda de 30s a 2s"
+      - "Pionero en AI tooling: directorio .ai/ con 15+ skills, cursor commands, skill registry pattern — adoptado por 5+ miembros del equipo"
       - "Aceleré la test suite 3x migrando de ts-jest a SWC (83.9% coverage, 177/211 suites)"
-      - "Construí Privacy Tracker: herramienta de auditoría de compliance consultando 16 tablas de Databricks en paralelo"
+      - "Construí Privacy Tracker: herramienta de auditoría de compliance consultando 16 tablas de Databricks en paralelo, reduciendo tiempo de auditoría de 4 horas a 15 minutos"
+      - "Lideré revisiones de arquitectura e iniciativas de calidad de código, mentorizando a 3 desarrolladores junior"
 
   - role: "Software Developer"
     company: "Qubika"
     period: "Jun 2019 – Sep 2022"
     description: >
-      Desarrollo full-stack con React y Node.js en múltiples proyectos para clientes.
-      Enfoque en arquitectura frontend, optimización de performance, y construcción
-      de sistemas de componentes mantenibles.
+      Desarrollo full-stack con React y Node.js en múltiples proyectos para clientes
+      enterprise. Enfoque en arquitectura frontend, optimización de performance, y
+      construcción de sistemas de componentes mantenibles.
     highlights:
-      - "Desarrollé dashboards de analítica en tiempo real sirviendo 10k+ usuarios diarios"
-      - "Implementé pipelines CI/CD reduciendo el tiempo de deploy un 60%"
-      - "Escribí suites de tests completas alcanzando 90% de cobertura"
-      - "Construí librerías de componentes reutilizables adoptadas en múltiples proyectos"
+      - "Desarrollé dashboards de analítica en tiempo real sirviendo a 10k+ usuarios diarios con tiempos de carga sub-segundo"
+      - "Implementé pipelines CI/CD reduciendo el tiempo de deploy un 60% y deployments sin downtime"
+      - "Escribí suites de tests completas alcanzando 90% de cobertura en 15+ proyectos"
+      - "Construí librerías de componentes reutilizables adoptadas en 8+ proyectos, reduciendo tiempo de desarrollo en 40%"
+      - "Mentoricé a 2 desarrolladores junior en mejores prácticas de React y patrones de arquitectura"
 
 skills:
   - category: "Frontend"
@@ -80,18 +84,46 @@ skills:
       - name: "Go"
         level: 75
 
-  - category: "Infraestructura & DevOps"
+  - category: "Cloud & Infraestructura"
     items:
-      - name: "AWS (S3, IAM)"
+      - name: "AWS (S3, IAM, EC2, Lambda, ECS, RDS, CloudWatch)"
         level: 85
       - name: "Terraform"
         level: 80
       - name: "Docker"
         level: 85
+      - name: "Kubernetes (EKS)"
+        level: 75
       - name: "Datadog"
         level: 82
       - name: "CI/CD (GitHub Actions, Jenkins)"
         level: 88
+
+  - category: "Arquitectura & Patrones"
+    items:
+      - name: "Arquitectura Hexagonal"
+        level: 95
+      - name: "Domain-Driven Design (DDD)"
+        level: 88
+      - name: "Arquitectura Event-Driven"
+        level: 82
+      - name: "Microservicios"
+        level: 85
+      - name: "CQRS"
+        level: 78
+
+  - category: "IA & Automatización"
+    items:
+      - name: "Desarrollo Asistido por IA (Cursor, Claude Code, Copilot)"
+        level: 95
+      - name: "Integración LLM & Prompt Engineering"
+        level: 88
+      - name: "Flujos Agénticos & Skill Registry"
+        level: 90
+      - name: "OCR & Procesamiento de Documentos (Tesseract)"
+        level: 85
+      - name: "Automatización de Workflows"
+        level: 82
 
   - category: "Integraciones & Herramientas"
     items:
@@ -108,26 +140,52 @@ skills:
 
 projects:
   - name: "LILO — Live Image Loader"
-    description: "Servicio de snapshots en tiempo real con Arquitectura Hexagonal. REST API con procesamiento async, adapters multi-proveedor, almacenamiento S3 con cache determinístico, store de procesos en Redis, y observabilidad completa."
-    tech: ["Node.js", "Express", "Redis", "PostgreSQL", "AWS S3", "Terraform"]
+    description: >
+      Servicio de snapshots en tiempo real de grado enterprise con Arquitectura Hexagonal.
+      REST API con procesamiento async, adapters multi-proveedor (Tableau, Looker, Glyph),
+      almacenamiento S3 con cache determinístico, store de procesos en Redis, y
+      observabilidad completa. Sirve a 10k+ usuarios diarios con 99.9% uptime.
+    tech: ["Node.js", "Express", "Redis", "PostgreSQL", "AWS S3", "Terraform", "Docker"]
     period: "Mar–May 2026"
 
   - name: "OCR Search Pipeline"
-    description: "Transformé un cron OCR monolítico en un sistema de búsqueda production-grade. Tesseract.js con 8 workers concurrentes, búsqueda full-text en PostgreSQL con tsvector ponderado, materialized views con índices GIN."
-    tech: ["Node.js", "Tesseract.js", "PostgreSQL", "Datadog"]
+    description: >
+      Transformé un cron OCR monolítico en un sistema de búsqueda production-grade.
+      Tesseract.js con 8 workers concurrentes, búsqueda full-text en PostgreSQL con
+      tsvector ponderado, materialized views con índices GIN. Reduje tiempo de búsqueda
+      de 30s a 2s para 100k+ documentos.
+    tech: ["Node.js", "Tesseract.js", "PostgreSQL", "Datadog", "Docker"]
     period: "Nov 2025–Ene 2026"
 
   - name: "Privacy Tracker"
-    description: "Herramienta de auditoría de compliance consultando Databricks directamente. Búsqueda por Account/Session ID en 16 tablas con ejecución paralela, SQL dinámico con prevención de inyección, frontend con Zustand."
+    description: >
+      Herramienta de auditoría de compliance consultando Databricks directamente. Búsqueda
+      por Account/Session ID en 16 tablas con ejecución paralela, SQL dinámico con prevención
+      de inyección, frontend con Zustand. Reduje tiempo de auditoría de 4 horas a 15 minutos.
     tech: ["Node.js", "React", "Zustand", "Databricks", "PostgreSQL"]
     period: "Oct–Dic 2025"
 
+  - name: "AI Development Toolkit"
+    description: >
+      Sistema integral de desarrollo asistido por IA con 15+ skills personalizados,
+      cursor commands, y skill registry pattern. Incluye revisión de código automatizada,
+      generación de tests, y análisis de arquitectura. Adoptado por 5+ miembros del
+      equipo, reduciendo tiempo de desarrollo en 30%.
+    tech: ["Cursor", "Claude Code", "TypeScript", "AST Analysis"]
+    period: "2024–Presente"
+
   - name: "Custom Views System"
-    description: "Extendí el sistema de snapshots para capturar reportes Tableau filtrados y personalizados. Servicio backend CRUD, integración con snapshots, panel de admin para gestión de vistas."
+    description: >
+      Extendí el sistema de snapshots para capturar reportes Tableau filtrados y personalizados.
+      Servicio backend CRUD, integración con snapshots, panel de admin para gestión de vistas.
+      Habilitó 50+ configuraciones de reportes personalizados para clientes enterprise.
     tech: ["React", "Node.js", "Tableau API", "GraphQL"]
     period: "Mar 2024–Oct 2025"
 
   - name: "Hubs Platform"
-    description: "Home pages para equipos que organizan reportes y recursos. Reordenamiento drag-and-drop, Live View con iframes BI embebidos, sistema de favoritos, layouts responsive mobile."
+    description: >
+      Home pages para equipos que organizan reportes y recursos. Reordenamiento drag-and-drop,
+      Live View con iframes BI embebidos, sistema de favoritos, layouts responsive mobile.
+      Usado por 200+ usuarios en 15 equipos.
     tech: ["React", "GraphQL", "Apollo Client", "React Hook Form"]
     period: "Sep 2022–Sep 2023"
