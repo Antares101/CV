@@ -10,6 +10,28 @@
   --p5-muted: #b3b3b3;
 }
 
+/* WCAG: Ensure minimum touch target size (44x44px) */
+button, a, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* WCAG: Visible focus indicators */
+:focus-visible {
+  outline: 2px solid var(--p5-red);
+  outline-offset: 2px;
+}
+
+/* WCAG: Skip focus for decorative elements */
+[aria-hidden="true"]:focus {
+  outline: none;
+}
+
+/* WCAG: Ensure sufficient contrast for muted text */
+.p5-muted-contrast {
+  color: var(--p5-light-gray);
+}
+
 ::selection {
   background: var(--p5-red);
   color: var(--p5-black);
