@@ -4,18 +4,7 @@ import { useTranslations } from '../i18n/ui';
 import LanguageToggle from '../components/ui/LanguageToggle.astro';
 import PoliceTape from '../components/ui/PoliceTape.astro';
 import ThemeToggle from '../islands/ThemeToggle';
-
-export interface Props {
-  locale: Locale;
-  title?: string;
-  description?: string;
-}
-
-const { locale, title = 'CV', description } = Astro.props;
-const t = useTranslations(locale);
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const canonicalURL = locale === 'en' ? `${base}/` : `${base}/${locale}/`;
-const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
+import { ViewTransitions } from 'astro:transitions/client';
 ---
 
 <!DOCTYPE html>
@@ -47,6 +36,9 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <title>{title} | Antares101</title>
+
+    <!-- View Transitions for smooth page navigation -->
+    <ViewTransitions fallback="swap" />
   </head>
   <body class="antialiased">
     <!-- Skip link for accessibility -->
