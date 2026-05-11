@@ -8,7 +8,10 @@
   .theme-toggle,
   .scroll-indicator,
   footer,
-  #contact .flex-col a:not([href^="mailto"]) {
+  #contact .flex-col a:not([href^="mailto"]),
+  .p5-police-tape,
+  .p5-shard-decoration,
+  [aria-hidden="true"] {
     display: none !important;
   }
 
@@ -88,5 +91,11 @@
   /* URL display for important links */
   .no-print-url::after {
     content: none !important;
+  }
+
+  /* Print-specific: remove animations */
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
