@@ -205,6 +205,18 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
         });
       })();
     </script>
+
+    <!-- Privacy-focused analytics (no cookies, GDPR compliant) -->
+    <!-- Options: Plausible, Fathom, or simple page view counter -->
+    <!-- Uncomment and configure your preferred analytics:
+    <script is:inline>
+      // Simple page view tracking (privacy-focused)
+      if (typeof window !== 'undefined') {
+        const pageViews = localStorage.getItem('pageViews') || 0;
+        localStorage.setItem('pageViews', parseInt(pageViews) + 1);
+      }
+    </script>
+    -->
   </body>
 </html>
 
