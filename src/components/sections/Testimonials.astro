@@ -1,0 +1,104 @@
+---
+// Testimonials.astro - Professional testimonials/recommendations section
+import AnimatedSection from '../../islands/AnimatedSection';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const testimonials = [
+  {
+    quote: {
+      en: "Alejandro's architectural decisions transformed our data portal into a scalable platform serving Fortune 500 clients. His AI-assisted development approach accelerated our entire team's productivity.",
+      es: "Las decisiones arquitectónicas de Alejandro transformaron nuestro data portal en una plataforma escalable sirviendo a clientes Fortune 500. Su enfoque de desarrollo asistido por IA aceleró la productividad de todo nuestro equipo.",
+    },
+    author: "Engineering Manager",
+    company: "Antares Solutions",
+    role: {
+      en: "Direct Supervisor",
+      es: "Supervisor Directo",
+    },
+  },
+  {
+    quote: {
+      en: "Working with Alejandro on the OCR pipeline was exceptional. He transformed a monolithic cron job into a production-grade search system that reduced query times from 30 seconds to under 2.",
+      es: "Trabajar con Alejandro en el pipeline OCR fue excepcional. Transformó un cron job monolítico en un sistema de búsqueda de grado producción que redujo los tiempos de consulta de 30 segundos a menos de 2.",
+    },
+    author: "Senior Developer",
+    company: "Antares Solutions",
+    role: {
+      en: "Team Lead",
+      es: "Líder de Equipo",
+    },
+  },
+  {
+    quote: {
+      en: "Alejandro's reusable component library became the foundation for 8+ projects at Qubika. His focus on clean architecture and developer experience set new standards for our team.",
+      es: "La librería de componentes reutilizables de Alejandro se convirtió en la base para 8+ proyectos en Qubika. Su enfoque en arquitectura limpia y developer experience estableció nuevos estándares para nuestro equipo.",
+    },
+    author: "Tech Lead",
+    company: "Qubika",
+    role: {
+      en: "Former Colleague",
+      es: "Ex Colega",
+    },
+  },
+];
+---
+
+<section class="relative py-16 sm:py-24 lg:py-32 bg-p5-dark scroll-mt-16 overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="p5-shard-corner-tl" aria-hidden="true"></div>
+  <div class="p5-shard-corner-br" aria-hidden="true"></div>
+
+  <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <AnimatedSection client:visible>
+      <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wider text-p5-white mb-2 p5-section-header">
+        {locale === 'en' ? 'What People Say' : 'Lo Que Dicen'}
+      </h2>
+      <div class="p5-section-divider-enhanced mb-12"></div>
+    </AnimatedSection>
+
+    <div class="grid md:grid-cols-1 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <AnimatedSection client:visible>
+          <div class="group relative p-8 bg-p5-black border-2 border-p5-gray hover:border-p5-red hover:shadow-[0_0_20px_rgba(229,57,53,0.3)] transition-all duration-200 p5-card-aggressive">
+            <!-- Corner accent on hover -->
+            <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-p5-red opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-p5-red opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true"></div>
+
+            <!-- Quote icon -->
+            <svg class="w-10 h-10 text-p5-red/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+            </svg>
+
+            <!-- Quote text -->
+            <blockquote class="text-lg text-p5-white mb-6 leading-relaxed italic">
+              "{locale === 'en' ? testimonial.quote.en : testimonial.quote.es}"
+            </blockquote>
+
+            <!-- Author info -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-p5-red/20 border-2 border-p5-red/30 flex items-center justify-center">
+                <span class="text-p5-red font-display text-lg">
+                  {testimonial.author.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <p class="text-p5-white font-semibold">{testimonial.author}</p>
+                <p class="text-p5-muted text-sm">
+                  {locale === 'en' ? testimonial.role.en : testimonial.role.es} · {testimonial.company}
+                </p>
+              </div>
+            </div>
+
+            {/* P5 diagonal accent line */}
+            <div class="absolute bottom-0 right-0 w-16 h-[2px] bg-p5-red/20 rotate-[-35deg] origin-bottom-right" aria-hidden="true"></div>
+          </div>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>
