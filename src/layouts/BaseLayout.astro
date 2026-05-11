@@ -27,17 +27,21 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <link rel="canonical" href={`https://antares101.github.io/CV${canonicalURL}`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Prevent theme flash - P5 defaults to DARK always, only respects explicit user toggle -->
+    <!-- Prevent theme flash - supports system preference as default -->
     <script is:inline>
       (function() {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'light') {
-          document.documentElement.classList.remove('dark');
-          document.documentElement.classList.add('light');
-        } else {
-          document.documentElement.classList.add('dark');
-          document.documentElement.classList.remove('light');
+        const stored = localStorage.getItem('theme');
+        let isDark = true;
+
+        if (stored === 'light') {
+          isDark = false;
+        } else if (stored === 'system' || !stored) {
+          // Default: use system preference
+          isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
+
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.classList.toggle('light', !isDark);
       })();
     </script>
 

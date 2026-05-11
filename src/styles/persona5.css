@@ -8,6 +8,32 @@
   --p5-light-gray: #e0e0e0;
   --p5-white: #f5f5f5;
   --p5-muted: #b3b3b3;
+  /* Light mode overrides */
+  --p5-bg-primary: #fafafa;
+  --p5-bg-secondary: #ffffff;
+  --p5-bg-tertiary: #f0f0f0;
+}
+
+/* Light mode classes */
+:root.light {
+  --p5-black: #1a1a1a;
+  --p5-dark: #f5f5f5;
+  --p5-gray: #e0e0e0;
+  --p5-light-gray: #2a2a2a;
+  --p5-white: #0a0a0a;
+  --p5-muted: #666666;
+  --p5-bg-primary: #ffffff;
+  --p5-bg-secondary: #fafafa;
+  --p5-bg-tertiary: #f0f0f0;
+}
+
+/* Color scheme for native elements */
+:root {
+  color-scheme: dark;
+}
+
+:root.light {
+  color-scheme: light;
 }
 
 ::selection {
