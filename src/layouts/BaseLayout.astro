@@ -24,8 +24,25 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? `${title} — Personal CV`} />
+    <meta name="author" content="Alejandro Mancebo" />
+    <meta name="keywords" content="System Architect, Full-Stack Developer, React, Node.js, TypeScript, Hexagonal Architecture, Uruguay" />
     <link rel="canonical" href={`https://antares101.github.io/CV${canonicalURL}`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://antares101.github.io/CV${canonicalURL}`} />
+    <meta property="og:title" content={`${title} | Antares101`} />
+    <meta property="og:description" content={description ?? `${title} — System Architect & Full-Stack Developer`} />
+    <meta property="og:image" content="https://antares101.github.io/CV/images/profile.png" />
+    <meta property="og:locale" content={locale === 'es' ? 'es_UY' : 'en_US'} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={`https://antares101.github.io/CV${canonicalURL}`} />
+    <meta property="twitter:title" content={`${title} | Antares101`} />
+    <meta property="twitter:description" content={description ?? `${title} — System Architect & Full-Stack Developer`} />
+    <meta property="twitter:image" content="https://antares101.github.io/CV/images/profile.png" />
 
     <!-- Prevent theme flash - P5 defaults to DARK always, only respects explicit user toggle -->
     <script is:inline>
