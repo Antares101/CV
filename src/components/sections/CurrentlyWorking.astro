@@ -1,0 +1,55 @@
+---
+// CurrentlyWorking.astro - Shows what the developer is currently working on
+import AnimatedSection from '../../islands/AnimatedSection';
+
+interface Props {
+  locale: 'en' | 'es';
+}
+
+const { locale } = Astro.props;
+
+const items = [
+  {
+    icon: '🤖',
+    en: 'Building AI-powered development workflows',
+    es: 'Construyendo flujos de desarrollo potenciados por IA',
+  },
+  {
+    icon: '🏗️',
+    en: 'Architecting enterprise data platforms',
+    es: 'Arquitectando plataformas de datos enterprise',
+  },
+  {
+    icon: '📚',
+    en: 'Learning Kubernetes & cloud-native patterns',
+    es: 'Aprendiendo Kubernetes y patrones cloud-native',
+  },
+];
+---
+
+<section class="relative py-12 sm:py-16 bg-p5-black/50 scroll-mt-16 overflow-hidden">
+  <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <AnimatedSection client:visible>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl uppercase tracking-wider text-p5-white">
+          {locale === 'en' ? 'Currently Working On' : 'Trabajando Actualmente En'}
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        {items.map((item) => (
+          <div class="p-4 bg-p5-dark border border-p5-gray/50 hover:border-p5-red/30 transition-colors group">
+            <span class="text-2xl mb-2 block">{item.icon}</span>
+            <p class="text-sm text-p5-muted group-hover:text-p5-white transition-colors">
+              {locale === 'en' ? item.en : item.es}
+            </p>
+          </div>
+        ))}
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
