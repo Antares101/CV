@@ -22,6 +22,7 @@ Documentar las decisiones tomadas en cada PR de mejora del CV.
 | 10 | `feature/analytics` | Analytics placeholder (GDPR compliant) | ✅ Completado |
 | 11 | `feature/print-stylesheet` | Print stylesheet mejorado | ✅ Completado |
 | 12 | `feature/contact-form` | Contact form con mailto approach | ✅ Completado |
+| 13 | `feature/cv-content-optimization` | CV content optimization for US market ($8k+/month) | ✅ Completado |
 
 ## Decisiones por PR
 
@@ -101,6 +102,20 @@ Documentar las decisiones tomadas en cada PR de mejora del CV.
 - Campos de asunto y mensaje con validación
 - Labels y placeholders en ambos idiomas
 - Focus styles con theme P5
+
+### PR #13: CV Content Optimization for US Market
+**Decisiones**:
+- Headline: Add "AI-Powered" differentiator and "Hexagonal Architecture | Enterprise Data Platforms"
+- About: Rewrite with specific metrics (10k+ users, 3x test acceleration, 60% faster deploys)
+- Skills: Expand AWS beyond S3/IAM (EC2, Lambda, ECS, RDS, CloudWatch)
+- Skills: Add "Architecture & Patterns" category (DDD, Event-Driven, CQRS)
+- Skills: Add "AI & Automation" category (LLM Integration, Agentic Workflows)
+- Skills: Add Kubernetes (EKS) to Cloud & Infrastructure
+- Experience: Add specific metrics (50k+ snapshots/month, 30s→2s search time)
+- Experience: Add leadership highlights (mentoring 3 junior developers)
+- Projects: Add impact metrics to all projects
+- Projects: Add "AI Development Toolkit" as new project
+- Competitiveness: 60-65% → 85-90% match for $8k+/month US remote roles
 
 ## Cómo Probar
 
