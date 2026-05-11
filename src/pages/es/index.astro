@@ -4,6 +4,7 @@ import Hero from '../../components/sections/Hero.astro';
 import Experience from '../../components/sections/Experience.astro';
 import Skills from '../../components/sections/Skills.astro';
 import Projects from '../../components/sections/Projects.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
 import Contact from '../../components/sections/Contact.astro';
 
 // Load CV data
@@ -62,6 +63,8 @@ const locale = 'es';
   <Skills locale={locale} categories={cvData.skills} />
 
   <Projects locale={locale} items={cvData.projects} />
+
+  <Testimonials locale={locale} />
 
   <Contact
     locale={locale}
