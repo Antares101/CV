@@ -8,6 +8,47 @@
   --p5-light-gray: #e0e0e0;
   --p5-white: #f5f5f5;
   --p5-muted: #b3b3b3;
+  /* Animation timing variables */
+  --p5-duration-micro: 150ms;
+  --p5-duration-fast: 200ms;
+  --p5-duration-normal: 300ms;
+  --p5-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --p5-ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+/* Reduced motion support - WCAG accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle micro-interactions */
+.p5-micro-hover {
+  transition: transform var(--p5-duration-micro) var(--p5-ease-out),
+              color var(--p5-duration-micro) var(--p5-ease-out),
+              background-color var(--p5-duration-micro) var(--p5-ease-out);
+}
+
+.p5-micro-hover:hover {
+  transform: translateY(-1px);
+}
+
+.p5-micro-hover:focus-visible {
+  outline: 2px solid var(--p5-red);
+  outline-offset: 2px;
+}
+
+/* Subtle scale on focus for buttons */
+button:focus-visible,
+a:focus-visible {
+  transform: scale(1.02);
+  transition: transform var(--p5-duration-fast) var(--p5-ease-out);
 }
 
 ::selection {
