@@ -48,7 +48,7 @@ export default function AnimatedSection(props: { children: JSX.Element }) {
   return (
     <div
       ref={ref}
-      class="transition-all duration-700 ease-out opacity-100 translate-y-0"
+      class="transition-all duration-300 ease-out opacity-100 translate-y-0"
     >
       {props.children}
     </div>
