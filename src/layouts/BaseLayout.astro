@@ -47,6 +47,33 @@ const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <title>{title} | Antares101</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alejandro Mancebo",
+        "url": "https://antares101.github.io/CV/",
+        "image": "https://antares101.github.io/CV/images/profile.png",
+        "jobTitle": "System Architect & Full-Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Antares Solutions"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montevideo",
+          "addressCountry": "UY"
+        },
+        "email": "antarebo@gmail.com",
+        "sameAs": [
+          "https://github.com/Antares101",
+          "https://www.linkedin.com/in/amancebo/"
+        ],
+        "knowsAbout": ["React", "Node.js", "TypeScript", "Hexagonal Architecture", "PostgreSQL", "AWS"]
+      }
+    </script>
   </head>
   <body class="antialiased">
     <!-- Skip link for accessibility -->
