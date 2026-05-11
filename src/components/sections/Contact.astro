@@ -74,6 +74,53 @@ const t = useTranslations(locale);
           </span>
         </div>
 
+        <!-- Contact Form (mailto approach) -->
+        <div class="mt-8 max-w-md mx-auto">
+          <h3 class="text-lg font-bold text-p5-white mb-4 text-center">
+            {locale === 'en' ? 'Quick Message' : 'Mensaje Rápido'}
+          </h3>
+          <form
+            onsubmit={`window.location.href='mailto:${email}?subject='+encodeURIComponent(this.subject.value)+'&body='+encodeURIComponent(this.body.value); return false;`}
+            class="space-y-4"
+          >
+            <div>
+              <label for="subject" class="block text-sm text-p5-muted mb-1">
+                {locale === 'en' ? 'Subject' : 'Asunto'}
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-4 py-2 bg-p5-dark border-2 border-p5-gray text-p5-white focus:border-p5-red focus:outline-none transition-colors"
+                placeholder={locale === 'en' ? 'Job opportunity' : 'Oportunidad laboral'}
+              />
+            </div>
+            <div>
+              <label for="body" class="block text-sm text-p5-muted mb-1">
+                {locale === 'en' ? 'Message' : 'Mensaje'}
+              </label>
+              <textarea
+                id="body"
+                name="body"
+                rows="4"
+                required
+                class="w-full px-4 py-2 bg-p5-dark border-2 border-p5-gray text-p5-white focus:border-p5-red focus:outline-none transition-colors resize-vertical"
+                placeholder={locale === 'en' ? 'Your message here...' : 'Tu mensaje aquí...'}
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full p5-confirm-btn justify-center"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {locale === 'en' ? 'Send via Email' : 'Enviar por Email'}
+            </button>
+          </form>
+        </div>
+
         <!-- Social links - P5 angular style -->
         <div class="flex items-center justify-center gap-6">
           {social.github && (
