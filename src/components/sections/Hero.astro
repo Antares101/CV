@@ -1,6 +1,6 @@
 ---
-import type { Locale } from '../../i18n/ui';
-import { useTranslations } from '../../i18n/ui';
+import type { Locale } from "../../i18n/ui";
+import { useTranslations } from "../../i18n/ui";
 
 interface Social {
   github?: string;
@@ -20,7 +20,7 @@ export interface Props {
 
 const { locale, name, headline, about, location, social } = Astro.props;
 const t = useTranslations(locale);
-const nameParts = name.split(' ');
+const nameParts = name.split(" ");
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-p5-black">

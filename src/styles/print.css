@@ -77,7 +77,8 @@
   }
 
   /* Ensure page breaks are clean */
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 

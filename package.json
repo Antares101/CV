@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "biome format .",
+    "lint": "biome lint .",
+    "check": "biome check ."
   },
   "dependencies": {
     "@astrojs/solid-js": "^5.0.0",
@@ -18,6 +21,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@biomejs/biome": "^2.4.15",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^25.6.2",
     "typescript": "^5.6.0"

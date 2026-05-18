@@ -1,16 +1,13 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import solid from '@astrojs/solid-js';
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import solid from "@astrojs/solid-js";
 
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    solid(),
-  ],
+  integrations: [tailwind(), solid()],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
+    defaultLocale: "en",
+    locales: ["en", "es"],
   },
-  site: 'https://antares101.github.io',
-  base: '/CV',
+  site: "https://antares101.github.io",
+  base: "/CV",
 });

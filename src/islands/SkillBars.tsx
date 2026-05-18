@@ -1,4 +1,4 @@
-import { createSignal, onMount, onCleanup } from 'solid-js';
+import { createSignal, onMount, onCleanup } from "solid-js";
 
 interface Skill {
   name: string;
@@ -23,7 +23,7 @@ export default function SkillBars(props: Props) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(ref);
@@ -35,17 +35,13 @@ export default function SkillBars(props: Props) {
       {props.skills.map((skill) => (
         <div>
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-sm font-semibold text-p5-white">
-              {skill.name}
-            </span>
-            <span class="text-xs font-mono text-p5-red">
-              {skill.level}%
-            </span>
+            <span class="text-sm font-semibold text-p5-white">{skill.name}</span>
+            <span class="text-xs font-mono text-p5-red">{skill.level}%</span>
           </div>
           <div class="p5-skill-bar-track">
             <div
               class="p5-skill-bar-fill"
-              style={{ width: animated() ? `${skill.level}%` : '0%' }}
+              style={{ width: animated() ? `${skill.level}%` : "0%" }}
             />
           </div>
         </div>

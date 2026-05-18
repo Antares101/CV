@@ -1,9 +1,9 @@
 ---
-import type { Locale } from '../i18n/ui';
-import { useTranslations } from '../i18n/ui';
-import LanguageToggle from '../components/ui/LanguageToggle.astro';
-import PoliceTape from '../components/ui/PoliceTape.astro';
-import ThemeToggle from '../islands/ThemeToggle';
+import type { Locale } from "../i18n/ui";
+import { useTranslations } from "../i18n/ui";
+import LanguageToggle from "../components/ui/LanguageToggle.astro";
+import PoliceTape from "../components/ui/PoliceTape.astro";
+import ThemeToggle from "../islands/ThemeToggle";
 
 export interface Props {
   locale: Locale;
@@ -11,11 +11,11 @@ export interface Props {
   description?: string;
 }
 
-const { locale, title = 'CV', description } = Astro.props;
+const { locale, title = "CV", description } = Astro.props;
 const t = useTranslations(locale);
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const canonicalURL = locale === 'en' ? `${base}/` : `${base}/${locale}/`;
-const tapeText = locale === 'en' ? 'CAUTION' : 'PROHIBIDO';
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const canonicalURL = locale === "en" ? `${base}/` : `${base}/${locale}/`;
+const tapeText = locale === "en" ? "CAUTION" : "PROHIBIDO";
 ---
 
 <!DOCTYPE html>

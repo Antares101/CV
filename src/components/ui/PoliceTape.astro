@@ -6,24 +6,20 @@
  */
 export interface Props {
   /** Position of the tape corner. Default: 'top-right' */
-  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+  position?: "top-right" | "top-left" | "bottom-right" | "bottom-left";
   /** Text displayed on the tape. Default: 'CAUTION' */
   text?: string;
   /** Additional CSS classes */
   class?: string;
 }
 
-const {
-  position = 'top-right',
-  text = 'CAUTION',
-  class: className = '',
-} = Astro.props;
+const { position = "top-right", text = "CAUTION", class: className = "" } = Astro.props;
 
 const positionClasses: Record<string, string> = {
-  'top-right': 'p5-tape-top-right',
-  'top-left': 'p5-tape-top-left',
-  'bottom-right': 'p5-tape-bottom-right',
-  'bottom-left': 'p5-tape-bottom-left',
+  "top-right": "p5-tape-top-right",
+  "top-left": "p5-tape-top-left",
+  "bottom-right": "p5-tape-bottom-right",
+  "bottom-left": "p5-tape-bottom-left",
 };
 ---
 

@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/sections/Hero.astro';
-import Experience from '../../components/sections/Experience.astro';
-import Skills from '../../components/sections/Skills.astro';
-import Projects from '../../components/sections/Projects.astro';
-import Contact from '../../components/sections/Contact.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/sections/Hero.astro";
+import Experience from "../../components/sections/Experience.astro";
+import Skills from "../../components/sections/Skills.astro";
+import Projects from "../../components/sections/Projects.astro";
+import Contact from "../../components/sections/Contact.astro";
 
 // Load CV data
-import yaml from 'js-yaml';
-import fs from 'node:fs';
+import yaml from "js-yaml";
+import fs from "node:fs";
 
-const cvData = yaml.load(fs.readFileSync('src/data/es/cv.yaml', 'utf-8')) as {
+const cvData = yaml.load(fs.readFileSync("src/data/es/cv.yaml", "utf-8")) as {
   name: string;
   headline: string;
   about: string;
@@ -44,7 +44,7 @@ const cvData = yaml.load(fs.readFileSync('src/data/es/cv.yaml', 'utf-8')) as {
   }>;
 };
 
-const locale = 'es';
+const locale = "es";
 ---
 
 <BaseLayout locale={locale} title={cvData.name}>

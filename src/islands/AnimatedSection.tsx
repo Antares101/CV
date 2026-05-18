@@ -1,4 +1,4 @@
-import { createSignal, onMount, onCleanup, type JSX } from 'solid-js';
+import { createSignal, onMount, onCleanup, type JSX } from "solid-js";
 
 export default function AnimatedSection(props: { children: JSX.Element }) {
   let ref: HTMLDivElement | undefined;
@@ -8,7 +8,7 @@ export default function AnimatedSection(props: { children: JSX.Element }) {
     if (!ref) return;
 
     // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReducedMotion) {
       setVisible(true);
@@ -27,18 +27,18 @@ export default function AnimatedSection(props: { children: JSX.Element }) {
 
     // Not in viewport yet — add animation class and wait for scroll
     requestAnimationFrame(() => {
-      ref?.classList.add('p5-animate-target');
+      ref?.classList.add("p5-animate-target");
     });
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          ref?.classList.remove('p5-animate-target');
+          ref?.classList.remove("p5-animate-target");
           setVisible(true);
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
     );
 
     observer.observe(ref);
@@ -46,10 +46,7 @@ export default function AnimatedSection(props: { children: JSX.Element }) {
   });
 
   return (
-    <div
-      ref={ref}
-      class="transition-all duration-700 ease-out opacity-100 translate-y-0"
-    >
+    <div ref={ref} class="transition-all duration-700 ease-out opacity-100 translate-y-0">
       {props.children}
     </div>
   );

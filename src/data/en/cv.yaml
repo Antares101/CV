@@ -3,7 +3,7 @@
 # ============================================
 
 name: "Alejandro Mancebo"
-headline: "System Architect & Full-Stack Developer"
+headline: "System Architect & AI-Augmented DX Lead"
 about: >
   Self-taught engineer who learns by doing. From CSS fixes to Hexagonal
   Architecture in production — I build systems that scale. 4+ years designing
@@ -31,8 +31,8 @@ experience:
     highlights:
       - "Designed and built LILO: real-time snapshot service with multi-provider adapters (Tableau, Looker, Glyph)"
       - "Transformed OCR ingestion from monolithic cron to production-grade search with PostgreSQL full-text"
-      - "Pioneered AI tooling: .ai/ directory, 15+ skills, cursor commands, skill registry pattern"
-      - "Accelerated test suite 3x by migrating from ts-jest to SWC (83.9% coverage, 177/211 suites)"
+      - "Designed multi-agent orchestration framework: automatic delegation to specialized workers with retries and fallbacks"
+      - "Evaluated 4+ AI providers (Gemini CLI, Cursor, OpenCode, Kiro) to define enterprise stack based on quality/cost/latency metrics"
       - "Built Privacy Tracker: compliance audit tool querying 16 Databricks tables in parallel"
 
   - role: "Software Developer"
@@ -49,61 +49,47 @@ experience:
       - "Built reusable component libraries adopted across multiple projects"
 
 skills:
+  - category: "AI & Agent Orchestration"
+    items:
+      - "Multi-Agent Orchestration (omo, sdd, tdd, custom)"
+      - "Prompt Engineering & Harness Design"
+      - "AI Provider Evaluation (Gemini, Claude, Cursor, Kiro)"
+      - "Durable Agents (OpenClaw, Hermes on VPS)"
+      - "AI-Assisted Development Tooling"
+
   - category: "Frontend"
     items:
-      - name: "React"
-        level: 95
-      - name: "TypeScript"
-        level: 95
-      - name: "Apollo Client / GraphQL"
-        level: 90
-      - name: "Zustand"
-        level: 88
-      - name: "Tailwind CSS"
-        level: 90
-      - name: "React Hook Form / Yup"
-        level: 85
+      - "React"
+      - "TypeScript"
+      - "Apollo Client / GraphQL"
+      - "Zustand"
+      - "Tailwind CSS"
+      - "React Hook Form / Yup"
 
   - category: "Backend"
     items:
-      - name: "Node.js / Express"
-        level: 95
-      - name: "PostgreSQL"
-        level: 90
-      - name: "Knex.js"
-        level: 88
-      - name: "Redis"
-        level: 85
-      - name: "GraphQL / Apollo Server"
-        level: 88
-      - name: "Go"
-        level: 75
+      - "Node.js / Express"
+      - "PostgreSQL"
+      - "Knex.js"
+      - "Redis"
+      - "GraphQL / Apollo Server"
+      - "Go"
 
   - category: "Infrastructure & DevOps"
     items:
-      - name: "AWS (S3, IAM)"
-        level: 85
-      - name: "Terraform"
-        level: 80
-      - name: "Docker"
-        level: 85
-      - name: "Datadog"
-        level: 82
-      - name: "CI/CD (GitHub Actions, Jenkins)"
-        level: 88
+      - "AWS (S3, IAM)"
+      - "Terraform"
+      - "Docker"
+      - "Datadog"
+      - "CI/CD (GitHub Actions, Jenkins)"
 
   - category: "Integrations & Tools"
     items:
-      - name: "Tableau API"
-        level: 90
-      - name: "Looker API"
-        level: 88
-      - name: "Databricks"
-        level: 80
-      - name: "LaunchDarkly"
-        level: 85
-      - name: "Tesseract.js"
-        level: 82
+      - "Tableau API"
+      - "Looker API"
+      - "Databricks"
+      - "LaunchDarkly"
+      - "Tesseract.js"
 
 projects:
   - name: "LILO — Live Image Loader"
