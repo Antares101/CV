@@ -1,7 +1,6 @@
 ---
 // Skills component: render a flat list of strings as badges.
 // Supports both string entries and objects with a `name` field.
----
 const items = Astro.props.items ?? [];
 
 function renderSkill(item) {
@@ -9,6 +8,7 @@ function renderSkill(item) {
   if (typeof item === 'object' && item !== null) return item.name ?? '';
   return '';
 }
+---
 
 <style>
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; }

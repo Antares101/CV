@@ -59,7 +59,7 @@ const locale = "es";
 
   <Experience locale={locale} items={cvData.experience} />
 
-  <Skills locale={locale} categories={cvData.skills} />
+  <Skills locale={locale} items={cvData.skills.flatMap(c => c.items)} />
 
   <Projects locale={locale} items={cvData.projects} />
 
