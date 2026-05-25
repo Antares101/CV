@@ -8,3 +8,4 @@ openspec/
 .env
 .DS_Store
 *.local
+.atl/
